@@ -26,6 +26,7 @@
 **生态学相关**
 [R语言与生物地理学/遥感（物种分布模型）](markdown-notes/R_biogeo.html)
 [R语言与生物多样性（遗传多样性？）](markdown-notes/R_biodiv.html)
+[保护区规划解决方案——Zonation](markdown-notes/zonation.html)
 ### Python
 [Python与其他（指pandas？](markdown-notes/Python.html)
 ### 杂谈
