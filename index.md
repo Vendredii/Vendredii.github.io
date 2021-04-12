@@ -35,8 +35,8 @@
 ## 其他
 ### 更新动态
 ```
-2021.1.20
-update 1.6.8 冗余分析（RDA）：遗传数据的处理
+2021.4.12
+update 1.7 保护区规划解决方案——Zonation
 ```
 ### 友情链接（傍大腿
 [ZhenyeLi](https://karllzy.github.io/) 南林顶级程序员
