@@ -20,7 +20,7 @@
 **数据分析**
 [结构方程与词云分析](markdown-notes/R_sem.html)
 [Meta分析](markdown-notes/R_meta.html)
-[RDA冗余分析](markdown-notes/R_rda.html)
+[冗余分析与方差分解](markdown-notes/R_rda.html)
 
 **深度学习**
 [R语言与深度学习](markdown-notes/deeplearning.html)
@@ -30,7 +30,7 @@
 
 **生态学相关**
 [R语言与生物地理学/遥感](markdown-notes/R_biogeo.html)
-[R语言与生物多样性（遗传多样性？）](markdown-notes/R_biodiv.html)
+[R语言与生物/遗传多样性](markdown-notes/R_biodiv.html)
 [保护区规划解决方案——Zonation](markdown-notes/zonation.html)
 
 ### Python
@@ -43,9 +43,9 @@
 ## 其他
 ### 更新动态
 ```
-2021.4.16
-update 1.71 
-R->模型与拟合->各种各样的回归->空间相关与混合线性模型
+2021.4.19
+update 1.7.2
+R->数据分析->冗余分析与方差分解->方差分解（VPA）
 ```
 ### 友情链接（傍大腿
 [ZhenyeLi](https://karllzy.github.io/) 南林顶级程序员

@@ -1,12 +1,14 @@
-# 基于R语言的冗余分析（RDA）
+# 基于R的冗余分析（RDA）与方差分解（VPA）
+[TOC]
+## 冗余分析
 本教程使用了在Evolutionary Applications[(Jenkins et al.，2019)](https://onlinelibrary.wiley.com/doi/full/10.1111/eva.12849)上发表的欧洲龙虾（Homarus gammarus）种群遗传学研究中的双等位基因SNP基因型数据，数据可通过以下链接[下载](https://doi.org/10.5061/dryad.2v1kr38)
 原版教程来自[Tom-Jenkins](https://github.com/Tom-Jenkins/seascape_rda_tutorial)
 本教程使用的相关R环境的下载可以前往[我的github](https://github.com/Vendredii/Rstats/rda)
 在使用本教材进行RDA实践操作及基于此利用RDA方法撰写论文时，请按如下格式引用[该文献](https://onlinelibrary.wiley.com/doi/full/10.1111/eva.12849)
 Jenkins, T. L., Ellis, C. D., & Stevens, J. R. (2019). SNP discovery in European lobster (Homarus gammarus) using RAD sequencing. *Conservation Genetics Resources*, 11, 253– 257.
 [TOC]
-## 数据准备
-### 准备遗传学数据
+### 数据准备
+#### 准备遗传学数据
 加载相关R包与环境
 ```r
 # adegenet包加载失败就把所有包更新一下，再重启一下
@@ -135,7 +137,7 @@ ggplot(data = allele_freqs.sub, aes(x = site_ord, y = frequency, fill = region))
 # ggsave("allele_freq.pdf", width=10, height=8)
 ```
 ![barplot](Rmodel/Rplot12.jpeg)
-### 准备空间数据
+#### 准备空间数据
 准备运行环境
 ```r
 library(marmap)
@@ -211,7 +213,7 @@ dbmems = dbmem(lc_dist, MEM.autocor = "non-null")
 dbmems
 # write.csv(dbmems, file = "dbmems.csv", row.names = FALSE)
 ```
-### 准备环境数据
+#### 准备环境数据
 数据如下：
 平均海面温度(SST):当前(摄氏)
 平均海底温度(SBT):当前(摄氏度)
@@ -409,7 +411,7 @@ ggsave("7.temp_sal_heatmap.png", width = 10, height = 10, dpi = 600)
 # ggsave("7.temp_sal_heatmap.pdf", width = 10, height = 10)
 ```
 ![COM](Rmodel/Rplot21.png)
-## 进行冗余分析
+### 进行冗余分析
 加载环境与数据
 ```r
 library(tidyverse)
@@ -644,5 +646,83 @@ str(snp.load.df)
 # Extract locus ID
 snp.load.df %>% dplyr::filter(RDA1 %in% candidates)
 ```
+## 方差分解
+方差分解可以将每个解释变量（环境因子）独立进行CCA或RDA分析，获得每个解释变量对相应变量的方差变异的解释贡献度，之后通过多组数据取交集的方式获得每个解释变量的独立解释贡献度记忆环境因子共同解释的贡献度。
+可以使用内置的数据进行测试
+```r
+library(vegan)
+data("mite")
+data("mite.pcnm")
+data("mite.env")
+# mite是物种群落结构，也就是因变量，第一行是物种名称，之后每行是样本/样地数，差不多意思是就是每个样地的不同物种的数量
+head(mite)
+#   Brachy PHTH HPAV RARD SSTR Protopl MEGR MPRO TVIE HMIN HMIN2 NPRA TVEL ONOV
+# 1     17    5    5    3    2       1    4    2    2    1     4    1   17    4
+# 2      2    7   16    0    6       0    4    2    0    0     1    3   21   27
+# 3      4    3    1    1    2       0    3    0    0    0     6    3   20   17
+# 4     23    7   10    2    2       0    4    0    1    2    10    0   18   47
+# 5      5    8   13    9    0      13    0    0    0    3    14    3   32   43
+# 6     19    7    5    9    3       2    3    0    0   20    16    2   13   38
+# ...
 
+# 这是环境因子，有一些是因子变量
+head(mite.env)
+#   SubsDens WatrCont Substrate Shrub    Topo
+# 1    39.18   350.15   Sphagn1   Few Hummock
+# 2    54.99   434.81    Litter   Few Hummock
+# 3    46.07   371.72 Interface   Few Hummock
+# 4    48.19   360.50   Sphagn1   Few Hummock
+# 5    23.55   204.13   Sphagn1   Few Hummock
+# 6    57.32   311.55   Sphagn1   Few Hummock
 
+# 另一个环境因子，是pcnm的结果
+head(mite.pcnm)
+#           V1          V2           V3           V4          V5          V6
+# 1 0.01936957 -0.03564740 -0.004243617  0.013606215 -0.05189017 -0.03474468
+# 2 0.02327134 -0.04809322 -0.004319021 -0.004129358 -0.06717623 -0.05795898
+# 3 0.02553531 -0.05844679 -0.003091072 -0.025699042 -0.07594608 -0.07619106
+# 4 0.03065998 -0.07805595 -0.001108683 -0.056124820 -0.08546514 -0.09535844
+# 5 0.03105726 -0.08758357  0.003294018 -0.092445741 -0.05775704 -0.08126478
+# 6 0.04127819 -0.12060082  0.004167658 -0.126085915 -0.10026023 -0.13218923
+# ...
+
+# 可以对数据进行转换，进行hellinger转化
+# 但如果因变量只有一列则不需要转换
+mod <- varpart(mite,mite.env,mite.pcnm,transfo = "hel")
+```
+结果如下：
+```r
+Partition of variance in RDA 
+
+Call: varpart(Y = mite, X = mite.env, mite.pcnm, transfo = "hel")
+Species transformation:  hellinger
+Explanatory tables:
+X1:  mite.env
+X2:  mite.pcnm 
+
+No. of explanatory tables: 2 
+Total variation (SS): 27.205 
+            Variance: 0.39428 
+No. of observations: 70 
+
+Partition table:
+                     Df R.squared Adj.R.squared Testable
+[a+b] = X1           11   0.52650       0.43670     TRUE
+[b+c] = X2           22   0.62300       0.44653     TRUE
+[a+b+c] = X1+X2      33   0.75893       0.53794     TRUE
+Individual fractions                                    
+# x1对群落的贡献
+[a] = X1|X2          11                 0.09141     TRUE
+[b]                   0                 0.34530    FALSE
+# x2对群落的贡献
+[c] = X2|X1          22                 0.10124     TRUE
+# 无法解释的部分
+[d] = Residuals                         0.46206    FALSE
+---
+Use function ‘rda’ to test significance of fractions of interest
+```
+可视化：
+```r
+plot(mod, bg = c("hotpink", "skyblue"))
+```
+![vpa](Rmodel/Rplot27.jpeg)
