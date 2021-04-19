@@ -6,7 +6,6 @@
 本教程使用的相关R环境的下载可以前往[我的github](https://github.com/Vendredii/Rstats/rda)
 在使用本教材进行RDA实践操作及基于此利用RDA方法撰写论文时，请按如下格式引用[该文献](https://onlinelibrary.wiley.com/doi/full/10.1111/eva.12849)
 Jenkins, T. L., Ellis, C. D., & Stevens, J. R. (2019). SNP discovery in European lobster (Homarus gammarus) using RAD sequencing. *Conservation Genetics Resources*, 11, 253– 257.
-[TOC]
 ### 数据准备
 #### 准备遗传学数据
 加载相关R包与环境
