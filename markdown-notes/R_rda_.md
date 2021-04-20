@@ -1,13 +1,31 @@
-# 基于R的冗余分析（RDA）与方差分解（VPA）
-[TOC]
-## 冗余分析
-本教程使用了在Evolutionary Applications[(Jenkins et al.，2019)](https://onlinelibrary.wiley.com/doi/full/10.1111/eva.12849)上发表的欧洲龙虾（Homarus gammarus）种群遗传学研究中的双等位基因SNP基因型数据，数据可通过以下链接[下载](https://doi.org/10.5061/dryad.2v1kr38)
-原版教程来自[Tom-Jenkins](https://github.com/Tom-Jenkins/seascape_rda_tutorial)
-本教程使用的相关R环境的下载可以前往[我的github](https://github.com/Vendredii/Rstats/rda)
-在使用本教材进行RDA实践操作及基于此利用RDA方法撰写论文时，请按如下格式引用[该文献](https://onlinelibrary.wiley.com/doi/full/10.1111/eva.12849)
+#  基于R的冗余分析（RDA）与方差分解（VPA）
+  
+- [基于R的冗余分析（RDA）与方差分解（VPA）](#基于r的冗余分析rda与方差分解vpa )
+  - [冗余分析](#冗余分析 )
+    - [数据准备](#数据准备 )
+      - [准备遗传学数据](#准备遗传学数据 )
+      - [准备空间数据](#准备空间数据 )
+      - [准备环境数据](#准备环境数据 )
+    - [进行冗余分析](#进行冗余分析 )
+    - [Model summaries](#model-summaries )
+    - [RDA的可视化](#rda的可视化 )
+    - [部分冗余分析](#部分冗余分析 )
+  - [方差分解](#方差分解 )
+    - [简单的方差分解步骤](#简单的方差分解步骤 )
+    - [全流程方差分解](#全流程方差分解 )
+    - [多因子方差分解](#多因子方差分解 )
+  
+##  冗余分析
+  
+本教程使用了在Evolutionary Applications[(Jenkins et al.，2019)](https://onlinelibrary.wiley.com/doi/full/10.1111/eva.12849 )上发表的欧洲龙虾（Homarus gammarus）种群遗传学研究中的双等位基因SNP基因型数据，数据可通过以下链接[下载](https://doi.org/10.5061/dryad.2v1kr38 )
+原版教程来自[Tom-Jenkins](https://github.com/Tom-Jenkins/seascape_rda_tutorial )
+本教程使用的相关R环境的下载可以前往[我的github](https://github.com/Vendredii/Rstats/rda )
+在使用本教材进行RDA实践操作及基于此利用RDA方法撰写论文时，请按如下格式引用[该文献](https://onlinelibrary.wiley.com/doi/full/10.1111/eva.12849 )
 Jenkins, T. L., Ellis, C. D., & Stevens, J. R. (2019). SNP discovery in European lobster (Homarus gammarus) using RAD sequencing. *Conservation Genetics Resources*, 11, 253– 257.
-### 数据准备
-#### 准备遗传学数据
+###  数据准备
+  
+####  准备遗传学数据
+  
 加载相关R包与环境
 ```r
 # adegenet包加载失败就把所有包更新一下，再重启一下
@@ -135,8 +153,9 @@ ggplot(data = allele_freqs.sub, aes(x = site_ord, y = frequency, fill = region))
 # ggsave("allele_freq.png", width=10, height=8, dpi=600)
 # ggsave("allele_freq.pdf", width=10, height=8)
 ```
-![barplot](Rmodel/Rplot12.jpeg)
-#### 准备空间数据
+![barplot](Rmodel/Rplot12.jpeg )
+####  准备空间数据
+  
 准备运行环境
 ```r
 library(marmap)
@@ -166,8 +185,8 @@ depths$depth <= -10
 plot(bathydata)
 points(coords$Lon, coords$Lat, pch = 21, bg = "yellow", col = "black", cex = 2)
 ```
-![bathydata](Rmodel/Rplot13.jpeg)
-
+![bathydata](Rmodel/Rplot13.jpeg )
+  
 Tips:
 marmap作者的推荐：
 使用最小深度-10来避免路径穿过陆地块；使用最大深度-200来限制通往大陆架的路径
@@ -189,7 +208,7 @@ plot.bathy(bathydata, image= TRUE, land = TRUE, n = 0,
 # 轨迹
 lapply(lc_paths, lines, col = "orange", lwd = 2, lty = 1)
 ```
-![path](Rmodel/Rplot14.jpeg)
+![path](Rmodel/Rplot14.jpeg )
 计算最小耗费距离矩阵
 ```r
 lc_dist = lc.dist(trans1, coords.gps, res = "dist")
@@ -212,7 +231,8 @@ dbmems = dbmem(lc_dist, MEM.autocor = "non-null")
 dbmems
 # write.csv(dbmems, file = "dbmems.csv", row.names = FALSE)
 ```
-#### 准备环境数据
+####  准备环境数据
+  
 数据如下：
 平均海面温度(SST):当前(摄氏)
 平均海底温度(SBT):当前(摄氏度)
@@ -312,7 +332,7 @@ sst.plt
 ggsave("1.sst_heatmap.png", width = 10, height = 9, dpi = 600)
 # ggsave("Rplot15.png", width = 10, height = 9, dpi = 300)
 ```
-![SST](Rmodel/Rplot15.png)
+![SST](Rmodel/Rplot15.png )
 绘制海底温度
 ```r
 sbt.plt = ggplot()+
@@ -327,7 +347,7 @@ sbt.plt = ggplot()+
 sbt.plt
 ggsave("2.sbt_heatmap.png", width = 10, height = 9, dpi = 600)
 ```
-![SBT](Rmodel/Rplot16.png)
+![SBT](Rmodel/Rplot16.png )
 绘制海面盐度
 ```r
 sss.plt = ggplot()+
@@ -342,7 +362,7 @@ sss.plt = ggplot()+
 sss.plt
 ggsave("3.sss_heatmap.png", width = 10, height = 9, dpi = 600)
 ```
-![SSS](Rmodel/Rplot17.png)
+![SSS](Rmodel/Rplot17.png )
 绘制海底盐度
 ```r
 sbs.plt = ggplot()+
@@ -357,7 +377,7 @@ sbs.plt = ggplot()+
 sbs.plt
 ggsave("4.sbs_heatmap.png", width = 10, height = 9, dpi = 600)
 ```
-![SBS](Rmodel/Rplot18.png)
+![SBS](Rmodel/Rplot18.png )
 绘制海面叶绿体浓度
 ```r
 ssc.plt = ggplot()+
@@ -372,7 +392,7 @@ ssc.plt = ggplot()+
 ssc.plt
 ggsave("5.ssc_heatmap.png", width = 10, height = 9, dpi = 600)
 ```
-![SSC](Rmodel/Rplot19.png)
+![SSC](Rmodel/Rplot19.png )
 绘制海面钙含量
 ```r
 ssca.plt = ggplot()+
@@ -387,7 +407,7 @@ ssca.plt = ggplot()+
 ssca.plt
 ggsave("6.ssca_heatmap.png", width = 10, height = 9, dpi = 600)
 ```
-![SSCA](Rmodel/Rplot20.png)
+![SSCA](Rmodel/Rplot20.png )
 组合图片
 ```r
 # 组合两张关于温度的
@@ -396,21 +416,22 @@ figAB = ggarrange(sst.plt + labs(tag = "A") + ggtheme + theme(axis.title.y = ele
                   ncol = 2, common.legend = TRUE, legend = "right")
 figAB = annotate_figure(figAB,
                         left = text_grob("Latitude", size = 12, rot = 90))
-
+  
 # 组合两张关于盐分的
 figCD = ggarrange(sss.plt + labs(tag = "C") + ggtheme + theme(axis.title.y = element_blank()),
                   sbs.plt + labs(tag = "D") + ggtheme + theme(axis.title.y = element_blank()),
                   ncol = 2, common.legend = TRUE, legend = "right")
 figCD = annotate_figure(figCD,
                         left = text_grob("Latitude", size = 12, rot = 90))
-
+  
 # 把他们加起来
 fig = ggarrange(figAB, figCD, nrow = 2)
 ggsave("7.temp_sal_heatmap.png", width = 10, height = 10, dpi = 600)
 # ggsave("7.temp_sal_heatmap.pdf", width = 10, height = 10)
 ```
-![COM](Rmodel/Rplot21.png)
-### 进行冗余分析
+![COM](Rmodel/Rplot21.png )
+###  进行冗余分析
+  
 加载环境与数据
 ```r
 library(tidyverse)
@@ -434,7 +455,7 @@ pairs.panels(env.raw, scale = TRUE)
 env.data = subset(env.raw, select = -c(sst_mean, sbs_mean))
 pairs.panels(env.data, scale = TRUE)
 ```
-![cor](Rmodel/Rplot22.jpeg)
+![cor](Rmodel/Rplot22.jpeg )
 识别重要变量
 ```r
 # 使用前向选择来确定重要的环境变量
@@ -472,23 +493,24 @@ rda1
 # Call: rda(formula = allele_freqs ~ sbt_mean + sss_mean +
 # ssca_mean + MEM1 + MEM2 + MEM5 + MEM3 + MEM6, data = env.dbmems,
 # scale = TRUE)
-
+  
 #               Inertia Proportion Rank
 # Total         79.0000     1.0000     
 # Constrained   44.9918     0.5695    8
 # Unconstrained 34.0082     0.4305   28
 # Inertia is correlations 
-
+  
 # Eigenvalues for constrained axes:
 #   RDA1   RDA2   RDA3   RDA4   RDA5   RDA6   RDA7   RDA8 
 # 22.319 10.537  3.837  2.995  2.540  1.194  0.966  0.604 
-
+  
 # Eigenvalues for unconstrained axes:
 #   PC1   PC2   PC3   PC4   PC5   PC6   PC7   PC8 
 # 4.940 3.197 2.488 2.400 2.121 1.732 1.655 1.617 
 # (Showing 8 of 28 unconstrained eigenvalues)
 ```
-### Model summaries
+###  Model summaries
+  
 adjusted Rsquared 
 ```r
 RsquareAdj(rda1)
@@ -517,7 +539,7 @@ anova.cca(rda1, permutations = 1000, by="margin")
 # Marginal effects of terms
 # Permutation: free
 # Number of permutations: 1000
-
+  
 # Model: rda(formula = allele_freqs ~ sbt_mean + sss_mean + ssca_mean + MEM1 + MEM2 + MEM5 + MEM3 + MEM6, data = env.dbmems, scale = TRUE)
 #           Df Variance      F   Pr(>F)    
 # sbt_mean   1    0.913 0.7513 0.662338    
@@ -537,8 +559,9 @@ anova.cca(rda1, permutations = 1000, by="margin")
 summary(eigenvals(rda1, model = "constrained"))
 screeplot(rda1)
 ```
-![rda1](Rmodel/Rplot23.jpeg)
-### RDA的可视化
+![rda1](Rmodel/Rplot23.jpeg )
+###  RDA的可视化
+  
 ```r
 # 创建一个数据框来正确地为区域着色
 col_dframe = data.frame("site" = rownames(allele_freqs))
@@ -582,8 +605,9 @@ adj.R2 = round(RsquareAdj(rda1)$adj.r.squared, 3)
 mtext(bquote(italic("R")^"2"~"= "~.(adj.R2)), side = 3, adj = 0.5)
 dev.off()
 ```
-![rda2](Rmodel/Rplot24.png)
-### 部分冗余分析
+![rda2](Rmodel/Rplot24.png )
+###  部分冗余分析
+  
 Partial redundancy analysis
 在控制地理位置的同时执行RDA
 ```r
@@ -616,7 +640,7 @@ adj.R2 = round(RsquareAdj(pRDA)$adj.r.squared, 3)
 mtext(bquote(italic("R")^"2"~"= "~.(adj.R2)), side = 3, adj = 0.5)
 dev.off()
 ```
-![rda3](Rmodel/Rplot25.png)
+![rda3](Rmodel/Rplot25.png )
 Candidate SNPs for local adaptation？
 考察候选核苷酸多态性和当地适宜性的关系
 ```r
@@ -627,7 +651,7 @@ snp.load = scores(pRDA, choices = 1, display = "species")
 # 绘制SNP载荷直方图
 hist(snp.load, main = "SNP loadings on RDA1")
 ```
-![rda4](Rmodel/Rplot26.jpeg)
+![rda4](Rmodel/Rplot26.jpeg )
 确定分布尾部的SNP
 Function from https://popgen.nescent.org/2018-03-27_RDA_GEA.html
 ```r
@@ -641,12 +665,14 @@ candidates = outliers(x = snp.load, z = 2.5)
 snp.load.df = snp.load %>% as.data.frame
 snp.load.df$SNP_ID = rownames(snp.load.df)
 str(snp.load.df)
-
+  
 # Extract locus ID
 snp.load.df %>% dplyr::filter(RDA1 %in% candidates)
 ```
-## 方差分解
-### 简单的方差分解步骤
+##  方差分解
+  
+###  简单的方差分解步骤
+  
 方差分解可以将每个解释变量（环境因子）独立进行CCA或RDA分析，获得每个解释变量对相应变量的方差变异的解释贡献度，之后通过多组数据取交集的方式获得每个解释变量的独立解释贡献度记忆环境因子共同解释的贡献度。
 可以使用内置的数据进行测试
 ```r
@@ -664,7 +690,7 @@ head(mite)
 # 5      5    8   13    9    0      13    0    0    0    3    14    3   32   43
 # 6     19    7    5    9    3       2    3    0    0   20    16    2   13   38
 # ...
-
+  
 # 这是环境因子，有一些是因子变量
 head(mite.env)
 #   SubsDens WatrCont Substrate Shrub    Topo
@@ -674,7 +700,7 @@ head(mite.env)
 # 4    48.19   360.50   Sphagn1   Few Hummock
 # 5    23.55   204.13   Sphagn1   Few Hummock
 # 6    57.32   311.55   Sphagn1   Few Hummock
-
+  
 # 另一个环境因子，是pcnm的结果
 head(mite.pcnm)
 #           V1          V2           V3           V4          V5          V6
@@ -685,7 +711,7 @@ head(mite.pcnm)
 # 5 0.03105726 -0.08758357  0.003294018 -0.092445741 -0.05775704 -0.08126478
 # 6 0.04127819 -0.12060082  0.004167658 -0.126085915 -0.10026023 -0.13218923
 # ...
-
+  
 # 可以对数据进行转换，进行hellinger转化
 # 但如果因变量只有一列则不需要转换
 mod <- varpart(mite,mite.env,mite.pcnm,transfo = "hel")
@@ -693,18 +719,18 @@ mod <- varpart(mite,mite.env,mite.pcnm,transfo = "hel")
 结果如下：
 ```r
 Partition of variance in RDA 
-
+  
 Call: varpart(Y = mite, X = mite.env, mite.pcnm, transfo = "hel")
 Species transformation:  hellinger
 Explanatory tables:
 X1:  mite.env
 X2:  mite.pcnm 
-
+  
 No. of explanatory tables: 2 
 Total variation (SS): 27.205 
             Variance: 0.39428 
 No. of observations: 70 
-
+  
 Partition table:
                      Df R.squared Adj.R.squared Testable
 [a+b] = X1           11   0.52650       0.43670     TRUE
@@ -725,8 +751,9 @@ Use function ‘rda’ to test significance of fractions of interest
 ```r
 plot(mod, bg = c("hotpink", "skyblue"))
 ```
-![vpa](Rmodel/Rplot27.jpeg)
-### 全流程方差分解
+![vpa](Rmodel/Rplot27.jpeg )
+###  全流程方差分解
+  
 来自微信公众号：生态R学社
 加载数据
 ```r
@@ -756,51 +783,51 @@ rda_both <- ordistep(rda_null, formula(rda_full), direction = 'both', trace = 0)
 # 查看结果
 rda_back
 # Call: rda(formula = species ~ SM + AK, data = env)
-
+  
 #                 Inertia Proportion Rank
 # Total         9.224e+03  1.000e+00     
 # Constrained   8.653e+02  9.381e-02    2
 # Unconstrained 8.358e+03  9.062e-01   35
 # Inertia is variance 
-
+  
 # Eigenvalues for constrained axes:
 #  RDA1  RDA2 
 # 851.2  14.1 
-
+  
 # Eigenvalues for unconstrained axes:
 #  PC1  PC2  PC3  PC4  PC5  PC6  PC7  PC8 
 # 7433  323  153  114  101   57   43   40 
 # (Showing 8 of 35 unconstrained eigenvalues)
 rda_frwd
 # Call: rda(formula = species ~ TK, data = env)
-
+  
 #                 Inertia Proportion Rank
 # Total         9223.5835     1.0000     
 # Constrained    598.6051     0.0649    1
 # Unconstrained 8624.9784     0.9351   35
 # Inertia is variance 
-
+  
 # Eigenvalues for constrained axes:
 #  RDA1 
 # 598.6 
-
+  
 # Eigenvalues for unconstrained axes:
 #  PC1  PC2  PC3  PC4  PC5  PC6  PC7  PC8 
 # 7744  316  130  101   92   59   44   37 
 # (Showing 8 of 35 unconstrained eigenvalues)
 rda_both
 # Call: rda(formula = species ~ AK, data = env)
-
+  
 #                 Inertia Proportion Rank
 # Total         9.224e+03  1.000e+00     
 # Constrained   5.511e+02  5.975e-02    1
 # Unconstrained 8.673e+03  9.403e-01   35
 # Inertia is variance 
-
+  
 # Eigenvalues for constrained axes:
 #  RDA1 
 # 551.1 
-
+  
 # Eigenvalues for unconstrained axes:
 #  PC1  PC2  PC3  PC4  PC5  PC6  PC7  PC8 
 # 7667  382  157  117  101   57   49   43 
@@ -817,18 +844,18 @@ soil <- env %>% select(AK)
 vpa <- varpart(species, clim, soil)
 vpa
 # Partition of variance in RDA 
-
+  
 # Call: varpart(Y = species, X = clim, soil)
-
+  
 # Explanatory tables:
 # X1:  clim
 # X2:  soil 
-
+  
 # No. of explanatory tables: 2 
 # Total variation (SS): 627204 
 #             Variance: 9223.6 
 # No. of observations: 69 
-
+  
 # Partition table:
 #                      Df R.squared Adj.R.squared Testable
 # [a+b] = X1            1   0.00171      -0.01318     TRUE
@@ -847,14 +874,14 @@ vpa
 plot(vpa, bg = 2:5, id.size = 1.1, cex = 1.2, Xnames = c('Climate', 'Soil properties'))
 title('VPA')
 ```
-![vpa](Rmodel/Rplot28.jpeg)
+![vpa](Rmodel/Rplot28.jpeg )
 接下来需要检验方差结果的显著性。
 ```r
 anova(rda(species ~ AK + Condition(SM), data = env))
 # Permutation test for rda under reduced model
 # Permutation: free
 # Number of permutations: 999
-
+  
 # Model: rda(formula = species ~ AK + Condition(SM), data = env)
 #          Df Variance      F Pr(>F)   
 # Model     1    849.5 6.7078   0.01 **
@@ -866,7 +893,7 @@ anova(rda(species ~ Condition(SM) + AK, data = env))
 # Permutation test for rda under reduced model
 # Permutation: free
 # Number of permutations: 999
-
+  
 # Model: rda(formula = species ~ Condition(SM) + AK, data = env)
 #          Df Variance      F Pr(>F)   
 # Model     1    849.5 6.7078  0.008 **
@@ -875,7 +902,8 @@ anova(rda(species ~ Condition(SM) + AK, data = env))
 # Signif. codes:  
 # 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
-### 多因子方差分解
+###  多因子方差分解
+  
 导入数据
 ```r
 data <- read.csv("nature.csv", head = T, row.names = "NUM_Final")
@@ -965,7 +993,7 @@ data <- cbind(data,logM5)
 计算R方
 ```r
 library(MuMIn)
-
+  
 # 全模型
 # 为什么出现I()函数，原因是x^2表示x和x的相互作用，而I(x)表示单纯的x乘x
 mod12<-lm(logM5 ~ LAT + SINLONG + COSLONG +   
@@ -1069,7 +1097,7 @@ d3$factor<-factor(d3$factor, levels=c("COSLONG", "SINLONG",
                      "SLO" , "SR", "CWV_logSLA" , "CWM_logSLA","I(CWV_logH^2)",  "CWV_logH",
                      "I(CWV_logSLA^2)","CWS_logH","CWK_logSLA", "I(CWK_logH^2)","I(CWK_logSLA^2)", 
                      "CWS_logSLA", "CWK_logH"))
-
+  
 f1 <- ggplot(d3, aes(x=factor, y=Estimate)) + # , fill=Response_ord
   geom_point(size=1.5,stroke = 1.5)+
   geom_errorbar(aes(ymin=Estimate-1.96*`Std. Error`, ymax=Estimate+1.96*`Std. Error`), width=0)+
@@ -1083,4 +1111,5 @@ plot(f1)
 ```
 **注意：**
 **回归的Estimate就是B值就是beta就是回归的斜率**
-![vpa](Rmodel/Rplot29.jpeg)
+![vpa](Rmodel/Rplot29.jpeg )
+  
