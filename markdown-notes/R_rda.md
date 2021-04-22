@@ -1372,6 +1372,7 @@ ggplot(data = heatmap, aes(x = Var1,y = Var2, fill = value)) +
     axis.text.x = element_text(angle = 30)
   )
 ```
+![hmap2](Rmodel/Rplot36.jpeg)
 
 ### 变量筛选（基于LASSO）
 ```r
