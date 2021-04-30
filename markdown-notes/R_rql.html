@@ -1,0 +1,568 @@
+<!DOCTYPE html><html><head>
+      <title>R_rql</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="%E8%BF%9E%E6%8E%A5%E6%A0%B7%E5%9C%B0-%E6%80%A7%E7%8A%B6%E4%B8%8E%E7%8E%AF%E5%A2%83">&#x8FDE;&#x63A5;&#x6837;&#x5730;&#x3001;&#x6027;&#x72B6;&#x4E0E;&#x73AF;&#x5883;</h1>
+
+<p>&#x5173;&#x4E8E;&#x6837;&#x5730;/&#x5927;&#x7530;&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#x4E0E;&#x5B9E;&#x8DF5;</p>
+<ul>
+<li><a href="#%E8%BF%9E%E6%8E%A5%E6%A0%B7%E5%9C%B0-%E6%80%A7%E7%8A%B6%E4%B8%8E%E7%8E%AF%E5%A2%83">&#x8FDE;&#x63A5;&#x6837;&#x5730;&#x3001;&#x6027;&#x72B6;&#x4E0E;&#x73AF;&#x5883;</a>
+<ul>
+<li><a href="#rql%E5%88%86%E6%9E%90">RQL&#x5206;&#x6790;</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%8E%A2%E7%B4%A2">&#x6570;&#x636E;&#x63A2;&#x7D22;</a></li>
+<li><a href="#%E5%A4%9A%E5%85%83%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92mglm">&#x591A;&#x5143;&#x5E7F;&#x4E49;&#x7EBF;&#x6027;&#x56DE;&#x5F52;mGLM</a></li>
+<li><a href="#%E5%A4%9A%E5%85%83sdm">&#x591A;&#x5143;SDM</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E8%A7%92%E5%88%86%E6%9E%90">&#x7B2C;&#x56DB;&#x89D2;&#x5206;&#x6790;</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E7%AD%9B%E9%80%89%E5%9F%BA%E4%BA%8Elasso">&#x53D8;&#x91CF;&#x7B5B;&#x9009;&#xFF08;&#x57FA;&#x4E8E;LASSO&#xFF09;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="rql%E5%88%86%E6%9E%90">RQL&#x5206;&#x6790;</h2>
+
+<p>&#x6765;&#x81EA;&#xFF1A;<a href="https://heather-grab.github.io/Entom-4940/rql.html">https://heather-grab.github.io/Entom-4940/rql.html</a><br>
+&#x51C6;&#x5907;&#x73AF;&#x5883;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">setwd<span class="token punctuation">(</span><span class="token string">&apos;/Users/calice/desktop/rql&apos;</span><span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>mvabund<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>lattice<span class="token punctuation">)</span>
+<span class="token comment"># R&#x77E9;&#x9635;&#xFF0C;&#x5373;&#x4E3A;&#x6BCF;&#x4E2A;&#x5730;&#x70B9;&#x7684;&#x60C5;&#x51B5;</span>
+env <span class="token operator">&lt;-</span> read.csv<span class="token punctuation">(</span><span class="token string">&quot;env.csv&quot;</span><span class="token punctuation">,</span> row.names <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+env
+<span class="token comment">#   bio1 bio2  alt soil</span>
+<span class="token comment"># a 34.9  6.0 17.1  9.0</span>
+<span class="token comment"># b 49.6 20.2 25.9  9.9</span>
+<span class="token comment"># c 37.3  2.9 13.3  9.4</span>
+<span class="token comment"># d 52.1 15.1 19.1 10.6</span>
+<span class="token comment"># e 32.2  0.0 22.9  2.6</span>
+<span class="token comment"># f 55.1  0.0 13.6  1.6</span>
+<span class="token comment"># Q&#x77E9;&#x9635;&#xFF0C;&#x6BCF;&#x4E2A;&#x7269;&#x79CD;&#x7684;&#x60C5;&#x51B5;</span>
+trait <span class="token operator">&lt;-</span> read.csv<span class="token punctuation">(</span><span class="token string">&quot;trait.csv&quot;</span><span class="token punctuation">,</span> row.names <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+trait
+<span class="token comment">#     height leaflen climb growth</span>
+<span class="token comment"># sp1    861    1.90 climb   herb</span>
+<span class="token comment"># sp2    819    1.87 climb   herb</span>
+<span class="token comment"># sp3    904    2.16 climb   herb</span>
+<span class="token comment"># sp4   1663    1.69   non   wood</span>
+<span class="token comment"># sp5   1778    1.53   sns   herb</span>
+<span class="token comment"># sp6   1151    1.91   non   herb</span>
+<span class="token comment"># L&#x77E9;&#x9635;&#xFF0C;&#x7269;&#x79CD;&#x5728;&#x5730;&#x70B9;&#x4E0A;&#x7684;&#x60C5;&#x51B5;</span>
+dis <span class="token operator">&lt;-</span> read.csv<span class="token punctuation">(</span><span class="token string">&quot;dis.csv&quot;</span><span class="token punctuation">,</span> row.names <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+dis
+<span class="token comment">#   sp1 sp2 sp3 sp4 sp5 sp6</span>
+<span class="token comment"># a   0   0   1  24   2   2</span>
+<span class="token comment"># b   0   0   0  16   2   3</span>
+<span class="token comment"># c   0   2   0   0   1   7</span>
+<span class="token comment"># d   0   0   0   3   0   1</span>
+<span class="token comment"># e   0   0   0   8   2   0</span>
+<span class="token comment"># f   1   0   2   7   0   0</span>
+</pre><h3 class="mume-header" id="%E6%95%B0%E6%8D%AE%E6%8E%A2%E7%B4%A2">&#x6570;&#x636E;&#x63A2;&#x7D22;</h3>
+
+<pre data-role="codeBlock" data-info="r" class="language-r"><span class="token comment"># &#x7B49;&#x53F7;</span>
+dis_sp <span class="token operator">=</span> mvabund<span class="token punctuation">(</span>dis<span class="token punctuation">)</span>
+plot<span class="token punctuation">(</span>dis_sp<span class="token punctuation">)</span>
+</pre><p><img src="Rmodel/Rplot30.jpeg" alt="ab"><br>
+&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5206;&#x7C7B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x5C06;&#x7269;&#x79CD;&#x533A;&#x5206;&#x5F00;&#x6765;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">env2 <span class="token operator">=</span> env
+env2<span class="token operator">$</span>habitat <span class="token operator">=</span> <span class="token string">&quot;field&quot;</span>
+env2<span class="token operator">$</span>habitat<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">&lt;-</span> <span class="token string">&quot;edge&quot;</span>
+env2<span class="token operator">$</span>habitat <span class="token operator">=</span> as.factor<span class="token punctuation">(</span>env2<span class="token operator">$</span>habitat<span class="token punctuation">)</span>
+
+plot<span class="token punctuation">(</span>dis_sp <span class="token operator">~</span> env2<span class="token operator">$</span>habitat<span class="token punctuation">,</span> tranformation <span class="token operator">=</span> <span class="token string">&quot;no&quot;</span><span class="token punctuation">)</span>
+</pre><p><img src="Rmodel/Rplot31.jpeg" alt="ab2"><br>
+&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x501F;&#x6B64;&#x4E86;&#x89E3;&#x6BCF;&#x4E2A;&#x7269;&#x79CD;&#x5728;&#x5176;&#x7279;&#x5B9A;&#x7684;&#x6816;&#x606F;&#x5730;&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x4E30;&#x5BCC;&#x5EA6;&#x60C5;&#x51B5;&#x3002;</p>
+<h3 class="mume-header" id="%E5%A4%9A%E5%85%83%E5%B9%BF%E4%B9%89%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92mglm">&#x591A;&#x5143;&#x5E7F;&#x4E49;&#x7EBF;&#x6027;&#x56DE;&#x5F52;mGLM</h3>
+
+<p>&#x4E86;&#x89E3;&#x7269;&#x79CD;&#x5206;&#x5E03;&#x683C;&#x5C40;/&#x591A;&#x6837;&#x6027;&#x4E0E;&#x73AF;&#x5883;&#x7684;&#x5173;&#x7CFB;&#x3002;<br>
+dis_sp&#x4E0E;bio1&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r"><span class="token comment"># &#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x6570;&#x636E;&#x662F;&#x6CCA;&#x677E;&#x5206;&#x5E03;</span>
+mod1 <span class="token operator">&lt;-</span> manyglm<span class="token punctuation">(</span>dis_sp <span class="token operator">~</span> env<span class="token operator">$</span>bio1<span class="token punctuation">,</span> family <span class="token operator">=</span> <span class="token string">&quot;poisson&quot;</span><span class="token punctuation">)</span>
+plot<span class="token punctuation">(</span>mod1<span class="token punctuation">)</span>
+</pre><p><img src="Rmodel/Rplot32.jpeg" alt="glm1"><br>
+&#x6B8B;&#x5DEE;&#x6B6A;&#x4E86;&#xFF0C;&#x8BF4;&#x660E;&#x4E0D;&#x662F;&#x6CCA;&#x677E;&#x5206;&#x5E03;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x8D1F;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#xFF1F;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">mod2 <span class="token operator">&lt;-</span> manyglm<span class="token punctuation">(</span>dis_sp <span class="token operator">~</span> env<span class="token operator">$</span>bio1<span class="token punctuation">,</span> family <span class="token operator">=</span> <span class="token string">&quot;negative_binomial&quot;</span><span class="token punctuation">)</span>
+plot<span class="token punctuation">(</span>mod2<span class="token punctuation">)</span>
+</pre><p><img src="Rmodel/Rplot33.jpeg" alt="glm2"><br>
+&#x6B8B;&#x5DEE;&#x5E73;&#x8861;&#x4E86;&#x4E0D;&#x5C11;&#x3002;<br>
+&#x53EF;&#x4EE5;&#x8FDB;&#x884C;anova&#x5206;&#x6790;&#x6765;&#x63A2;&#x7D22;&#x7269;&#x79CD;&#x7684;&#x591A;&#x6837;&#x6027;&#x683C;&#x5C40;&#x662F;&#x5426;&#x4E0E;bio1&#x6709;&#x663E;&#x8457;&#x5173;&#x8054;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r"><span class="token comment">#bootstrap</span>
+anova<span class="token punctuation">(</span>mod2<span class="token punctuation">,</span> nBoot <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">)</span>
+<span class="token comment"># Time elapsed: 0 hr 0 min 0 sec</span>
+<span class="token comment"># Analysis of Deviance Table</span>
+
+<span class="token comment"># Model: dis_sp ~ env$bio1</span>
+
+<span class="token comment"># Multivariate test:</span>
+<span class="token comment">#             Res.Df Df.diff   Dev Pr(&gt;Dev)</span>
+<span class="token comment"># (Intercept)      5                       </span>
+<span class="token comment"># env$bio1         4       1 8.042      0.4</span>
+<span class="token comment"># Arguments:</span>
+<span class="token comment">#  Test statistics calculated assuming uncorrelated response (for faster computation) </span>
+<span class="token comment">#  P-value calculated using 99 iterations via PIT-trap resampling.</span>
+</pre><p>&#x4F7F;&#x7528;<code>p.uni</code>&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x5177;&#x4F53;&#x770B;&#x5230;&#x6240;&#x6709;&#x7269;&#x79CD;&#x4E0E;bio1&#x7684;&#x8C03;&#x6574;&#x540E;&#x7684;&#x76F8;&#x5173;&#x6027;&#x662F;&#x5426;&#x663E;&#x8457;&#x3002;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">anova<span class="token punctuation">(</span>mod2<span class="token punctuation">,</span> p.uni <span class="token operator">=</span> <span class="token string">&quot;adjusted&quot;</span><span class="token punctuation">,</span> nBoot <span class="token operator">=</span> <span class="token number">99</span><span class="token punctuation">)</span>
+<span class="token comment"># Time elapsed: 0 hr 0 min 0 sec</span>
+<span class="token comment"># Analysis of Deviance Table</span>
+
+<span class="token comment"># Model: dis_sp ~ env$bio1</span>
+
+<span class="token comment"># Multivariate test:</span>
+<span class="token comment">#             Res.Df Df.diff   Dev Pr(&gt;Dev)</span>
+<span class="token comment"># (Intercept)      5                       </span>
+<span class="token comment"># env$bio1         4       1 8.042      0.4</span>
+
+<span class="token comment"># Univariate Tests:</span>
+<span class="token comment">#               sp1            sp2            sp3         </span>
+<span class="token comment">#               Dev Pr(&gt;Dev)   Dev Pr(&gt;Dev)   Dev Pr(&gt;Dev)</span>
+<span class="token comment"># (Intercept)                                             </span>
+<span class="token comment"># env$bio1    3.582     0.42 0.791     0.84 0.786     0.84</span>
+<span class="token comment">#               sp4            sp5            sp6         </span>
+<span class="token comment">#               Dev Pr(&gt;Dev)   Dev Pr(&gt;Dev)   Dev Pr(&gt;Dev)</span>
+<span class="token comment"># (Intercept)                                             </span>
+<span class="token comment"># env$bio1    0.197     0.84 2.148     0.57 0.538     0.84</span>
+<span class="token comment"># Arguments:</span>
+<span class="token comment">#  Test statistics calculated assuming uncorrelated response (for faster computation) </span>
+<span class="token comment"># P-value calculated using 99 iterations via PIT-trap resampling.</span>
+</pre><h3 class="mume-header" id="%E5%A4%9A%E5%85%83sdm">&#x591A;&#x5143;SDM</h3>
+
+<p>&#x5C31;&#x662F;&#x57FA;&#x4E8E;&#x4E0A;&#x9762;glm&#x7684;&#x4E00;&#x4E2A;&#x7269;&#x79CD;&#x5206;&#x5E03;&#x6A21;&#x578B;&#xFF0C;&#x672C;&#x8D28;&#x4E0A;&#x662F;predict(glm())&#x3002;&#x6A21;&#x578B;&#x4E2D;&#x7269;&#x79CD;&#x4E3A;&#x56FA;&#x5B9A;&#x6548;&#x5E94;&#xFF0C;&#x4E14;&#x901A;&#x8FC7;&#x73AF;&#x5883;&#x76F8;&#x4E92;&#x4F5C;&#x7528;&#x3002;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">sdm_fit <span class="token operator">=</span> traitglm<span class="token punctuation">(</span>dis_sp<span class="token punctuation">,</span> env<span class="token punctuation">)</span>
+</pre><p>&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6807;&#x51C6;&#x5316;&#x6A21;&#x578B;&#x7CFB;&#x6570;&#xFF08;&#x56DE;&#x5F52;&#x659C;&#x7387;&#xFF09;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">sdm_fit<span class="token operator">$</span>fourth
+<span class="token comment">#                             bio1       bio2        alt</span>
+<span class="token comment"># as.factor.names.L..sp2  -2.146444  -1.245655  -0.905375</span>
+<span class="token comment"># as.factor.names.L..sp3 -18.360366  38.538891 -19.822485</span>
+<span class="token comment"># as.factor.names.L..sp4 -13.778650  28.875992 -12.890129</span>
+<span class="token comment"># as.factor.names.L..sp5   3.736608 -36.916878  28.603439</span>
+<span class="token comment"># as.factor.names.L..sp6   2.137445 -26.817396  21.258961</span>
+<span class="token comment">#                              soil</span>
+<span class="token comment"># as.factor.names.L..sp2   3.243161</span>
+<span class="token comment"># as.factor.names.L..sp3 -23.591447</span>
+<span class="token comment"># as.factor.names.L..sp4 -17.058409</span>
+<span class="token comment"># as.factor.names.L..sp5  38.603482</span>
+<span class="token comment"># as.factor.names.L..sp6  31.107954</span>
+</pre><p>&#x7ED8;&#x5236;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r"><span class="token comment"># sdm_fit$fourth.corner&#x548C;sdm_fit$fourth&#x4F3C;&#x4E4E;&#x6CA1;&#x533A;&#x522B;</span>
+a <span class="token operator">=</span> max<span class="token punctuation">(</span>abs<span class="token punctuation">(</span>sdm_fit<span class="token operator">$</span>fourth.corner<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># &#x8BBE;&#x7F6E;&#x989C;&#x8272;&#x7684;&#x6E10;&#x53D8;&#x7CFB;&#x7EDF;</span>
+colort <span class="token operator">=</span> colorRampPalette<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token string">&quot;blue&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;white&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;red&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#&#x7ED8;&#x5236;&#x7269;&#x79CD;&#x4E0E;&#x73AF;&#x5883;&#x7684;&#x5173;&#x7CFB;&#x77E9;&#x9635;</span>
+plot.spp <span class="token operator">=</span> levelplot<span class="token punctuation">(</span>t<span class="token punctuation">(</span>as.matrix<span class="token punctuation">(</span>sdm_fit<span class="token operator">$</span>fourth.corner<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> xlab<span class="token operator">=</span><span class="token string">&quot;Environmental Variables&quot;</span><span class="token punctuation">,</span>
+ ylab<span class="token operator">=</span><span class="token string">&quot;Species&quot;</span><span class="token punctuation">,</span> col.regions<span class="token operator">=</span>colort<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> at<span class="token operator">=</span>seq<span class="token punctuation">(</span><span class="token operator">-</span>a<span class="token punctuation">,</span> a<span class="token punctuation">,</span> length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ scales <span class="token operator">=</span> list<span class="token punctuation">(</span> x<span class="token operator">=</span> list<span class="token punctuation">(</span>rot <span class="token operator">=</span> <span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>plot.spp<span class="token punctuation">)</span>
+</pre><p><img src="Rmodel/Rplot34.jpeg" alt="sdm"></p>
+<h3 class="mume-header" id="%E7%AC%AC%E5%9B%9B%E8%A7%92%E5%88%86%E6%9E%90">&#x7B2C;&#x56DB;&#x89D2;&#x5206;&#x6790;</h3>
+
+<p>&#x539F;&#x5148;&#x662F;&#x73AF;&#x5883;&#xFF0C;&#x6027;&#x72B6;&#x548C;&#x7269;&#x79CD;&#x5206;&#x5E03;&#x4E09;&#x4E2A;&#x89D2;&#xFF0C;&#x73B0;&#x5728;&#x8981;&#x8FDB;&#x884C;&#x6269;&#x5C55;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">fit <span class="token operator">=</span> traitglm<span class="token punctuation">(</span>dis<span class="token punctuation">,</span> env<span class="token punctuation">,</span> trait<span class="token punctuation">)</span>
+fit<span class="token operator">$</span>fourth
+<span class="token comment"># &#x5F97;&#x5230;&#x7684;&#x4F3C;&#x4E4E;&#x662F;&#x73AF;&#x5883;&#x4E0E;&#x6027;&#x72B6;&#x7684;&#x5173;&#x7CFB;</span>
+<span class="token comment">#                  bio1       bio2        alt      soil</span>
+<span class="token comment"># height      35.218287  -2.531766   9.834852 -42.99279</span>
+<span class="token comment"># leaflen    -24.685135  45.724439 -19.270302 -25.60843</span>
+<span class="token comment"># climbnon    -1.205911 -49.951263  34.751291  63.40392</span>
+<span class="token comment"># climbsns   -38.426865 -15.221388  15.094146  65.29489</span>
+<span class="token comment"># growthwood -43.189380  74.579155 -46.143020 -36.40022</span>
+</pre><p>&#x89C2;&#x5BDF;&#x6B8B;&#x5DEE;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">plot<span class="token punctuation">(</span>fit<span class="token punctuation">)</span>
+<span class="token comment"># nBoot&#x6700;&#x597D;&#x662F;999&#x4EC0;&#x4E48;&#x7684;</span>
+anova<span class="token punctuation">(</span>fit<span class="token punctuation">,</span> nBoot <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment"># Using block resampling... </span>
+<span class="token comment"># Resampling begins for test 1.</span>
+<span class="token comment"># 	Resampling run 0 finished. Time elapsed: 0.00 minutes...</span>
+<span class="token comment"># Time elapsed: 0 hr 0 min 0 sec</span>
+<span class="token comment"># Analysis of Deviance Table</span>
+
+<span class="token comment"># Model  1: traitglm(L = dis, R = env, Q = trait, get.fourth = FALSE)</span>
+<span class="token comment"># Model  2: traitglm(L = dis, R = env, Q = trait)</span>
+
+<span class="token comment"># Multivariate test:</span>
+<span class="token comment">#                           Res.Df Df.diff   Dev Pr(&gt;Dev)</span>
+<span class="token comment"># Main effects only             25                       </span>
+<span class="token comment"># env:trait (fourth corner)      5      20 50.18    0.182</span>
+<span class="token comment"># Arguments: P-value calculated using 10 iterations via PIT-trap block resampling.</span>
+</pre><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>summary</code>&#x8003;&#x5BDF;&#x6240;&#x6709;&#x56E0;&#x5B50;&#x7684;&#x663E;&#x8457;&#x6027;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">summary<span class="token punctuation">(</span>fit<span class="token punctuation">,</span> nBoot <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment"># Coefficients: (3 not defined because of singularities)</span>
+<span class="token comment">#                 wald value Pr(&gt;wald)  </span>
+<span class="token comment"># (Intercept)         46.704    0.0909 .</span>
+<span class="token comment"># sppsp2               0.717    0.0909 .</span>
+<span class="token comment"># sppsp3               7.238    0.0909 .</span>
+<span class="token comment"># sppsp4              14.257    0.0909 .</span>
+<span class="token comment"># sppsp5               6.968    0.0909 .</span>
+<span class="token comment"># sppsp6               3.526    0.0909 .</span>
+<span class="token comment"># bio1                 0.000    0.2727  </span>
+<span class="token comment"># bio2                 0.000    0.3636  </span>
+<span class="token comment"># alt                  0.000    0.5455  </span>
+<span class="token comment"># soil                 0.000    0.3636  </span>
+<span class="token comment"># bio1.squ             0.000    0.2727  </span>
+<span class="token comment"># bio2.squ             0.000    0.6364  </span>
+<span class="token comment"># alt.squ            259.127    0.0909 .</span>
+<span class="token comment"># soil.squ           419.920    0.0909 .</span>
+<span class="token comment"># bio1.height       2201.885    0.0909 .</span>
+<span class="token comment"># bio1.leaflen      1185.788    0.0909 .</span>
+<span class="token comment"># bio1.climbnon      101.597    0.6364  </span>
+<span class="token comment"># bio1.climbsns     1568.928    0.0909 .</span>
+<span class="token comment"># bio1.growthwood   8555.765    0.0909 .</span>
+<span class="token comment"># bio2.height        168.033    0.5455  </span>
+<span class="token comment"># bio2.leaflen      2272.804    0.0909 .</span>
+<span class="token comment"># bio2.climbnon     4643.564    0.0909 .</span>
+<span class="token comment"># bio2.climbsns      673.177    0.0909 .</span>
+<span class="token comment"># bio2.growthwood  12272.103    0.0909 .</span>
+<span class="token comment"># alt.height         648.529    0.0909 .</span>
+<span class="token comment"># alt.leaflen        996.368    0.0909 .</span>
+<span class="token comment"># alt.climbnon      3577.378    0.0909 .</span>
+<span class="token comment"># alt.climbsns       820.169    0.0909 .</span>
+<span class="token comment"># alt.growthwood   11168.552    0.0909 .</span>
+<span class="token comment"># soil.height       2315.545    0.0909 .</span>
+<span class="token comment"># soil.leaflen      1080.750    0.0909 .</span>
+<span class="token comment"># soil.climbnon     4609.975    0.0909 .</span>
+<span class="token comment"># soil.climbsns     2354.359    0.0909 .</span>
+<span class="token comment"># soil.growthwood   8399.477    0.0909 .</span>
+<span class="token comment"># --- </span>
+<span class="token comment"># Signif. codes:  0 &#x2018;***&#x2019; 0.001 &#x2018;**&#x2019; 0.01 &#x2018;*&#x2019; 0.05 &#x2018;.&#x2019; 0.1 &#x2018; &#x2019; 1 </span>
+
+<span class="token comment"># Test statistic:  3.781e+16, p-value: 0.0909 </span>
+<span class="token comment"># Arguments: P-value calculated using 10 resampling iterations via pit.trap resampling.</span>
+</pre><p>&#x7ED8;&#x5236;&#x70ED;&#x56FE;&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">a        <span class="token operator">=</span> max<span class="token punctuation">(</span>abs<span class="token punctuation">(</span>fit<span class="token operator">$</span>fourth.corner<span class="token punctuation">)</span> <span class="token punctuation">)</span>
+colort   <span class="token operator">=</span> colorRampPalette<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token string">&quot;blue&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;white&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;red&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+plot.<span class="token number">4</span>th <span class="token operator">=</span> levelplot<span class="token punctuation">(</span>t<span class="token punctuation">(</span>as.matrix<span class="token punctuation">(</span>fit<span class="token operator">$</span>fourth.corner<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> xlab<span class="token operator">=</span><span class="token string">&quot;Environmental Variables&quot;</span><span class="token punctuation">,</span>
+ ylab<span class="token operator">=</span><span class="token string">&quot;Species traits&quot;</span><span class="token punctuation">,</span> col.regions<span class="token operator">=</span>colort<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> at<span class="token operator">=</span>seq<span class="token punctuation">(</span><span class="token operator">-</span>a<span class="token punctuation">,</span> a<span class="token punctuation">,</span> length<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ scales <span class="token operator">=</span> list<span class="token punctuation">(</span> x<span class="token operator">=</span> list<span class="token punctuation">(</span>rot <span class="token operator">=</span> <span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span>plot.<span class="token number">4</span>th<span class="token punctuation">)</span>
+</pre><p><img src="Rmodel/Rplot35.jpeg" alt="hmap"></p>
+<p>&#x4F7F;&#x7528;ggplot2&#x7ED8;&#x5236;heatmap&#xFF1A;</p>
+<pre data-role="codeBlock" data-info="r" class="language-r">library<span class="token punctuation">(</span>ggplot2<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>reshape2<span class="token punctuation">)</span>
+data4heatmap <span class="token operator">&lt;-</span> as.matrix<span class="token punctuation">(</span>fit<span class="token operator">$</span>fourth.corner<span class="token punctuation">)</span>
+<span class="token comment">#                  bio1       bio2        alt      soil</span>
+<span class="token comment"># height      35.218287  -2.531766   9.834852 -42.99279</span>
+<span class="token comment"># leaflen    -24.685135  45.724439 -19.270302 -25.60843</span>
+<span class="token comment"># climbnon    -1.205911 -49.951263  34.751291  63.40392</span>
+<span class="token comment"># climbsns   -38.426865 -15.221388  15.094146  65.29489</span>
+<span class="token comment"># growthwood -43.189380  74.579155 -46.143020 -36.40022</span>
+<span class="token comment"># &#x6570;&#x636E;&#x6574;&#x5F62;</span>
+heatmap <span class="token operator">&lt;-</span> melt<span class="token punctuation">(</span>data4heatmap<span class="token punctuation">)</span>
+<span class="token comment">#          Var1 Var2      value</span>
+<span class="token comment"># 1      height bio1  35.218287</span>
+<span class="token comment"># 2     leaflen bio1 -24.685135</span>
+<span class="token comment"># 3    climbnon bio1  -1.205911</span>
+<span class="token comment"># 4    climbsns bio1 -38.426865</span>
+<span class="token comment"># 5  growthwood bio1 -43.189380</span>
+<span class="token comment"># 6      height bio2  -2.531766</span>
+<span class="token comment"># 7     leaflen bio2  45.724439</span>
+<span class="token comment"># 8    climbnon bio2 -49.951263</span>
+<span class="token comment"># 9    climbsns bio2 -15.221388</span>
+<span class="token comment"># 10 growthwood bio2  74.579155</span>
+<span class="token comment"># 11     height  alt   9.834852</span>
+<span class="token comment"># 12    leaflen  alt -19.270302</span>
+<span class="token comment"># 13   climbnon  alt  34.751291</span>
+<span class="token comment"># 14   climbsns  alt  15.094146</span>
+<span class="token comment"># 15 growthwood  alt -46.143020</span>
+<span class="token comment"># 16     height soil -42.992794</span>
+<span class="token comment"># 17    leaflen soil -25.608433</span>
+<span class="token comment"># 18   climbnon soil  63.403915</span>
+<span class="token comment"># 19   climbsns soil  65.294891</span>
+<span class="token comment"># 20 growthwood soil -36.400219</span>
+ggplot<span class="token punctuation">(</span>data <span class="token operator">=</span> heatmap<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> Var1<span class="token punctuation">,</span>y <span class="token operator">=</span> Var2<span class="token punctuation">,</span> fill <span class="token operator">=</span> value<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_tile<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  <span class="token comment"># &#x8BBE;&#x7F6E;&#x586B;&#x5145;&#x989C;&#x8272;</span>
+  scale_fill_continuous<span class="token punctuation">(</span>low <span class="token operator">=</span> <span class="token string">&quot;#00FF00&quot;</span><span class="token punctuation">,</span> high <span class="token operator">=</span> <span class="token string">&quot;#FF0000&quot;</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme_bw<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme<span class="token punctuation">(</span>
+    axis.ticks <span class="token operator">=</span> element_blank<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    panel.grid <span class="token operator">=</span> element_blank<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    panel.border <span class="token operator">=</span> element_blank<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    axis.title <span class="token operator">=</span> element_blank<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment"># &#x8BBE;&#x7F6E;x&#x8F74;&#x6807;&#x6CE8;&#x7684;&#x89D2;&#x5EA6;</span>
+    axis.text.x <span class="token operator">=</span> element_text<span class="token punctuation">(</span>angle <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+</pre><p><img src="Rmodel/Rplot36.jpeg" alt="hmap2"></p>
+<h3 class="mume-header" id="%E5%8F%98%E9%87%8F%E7%AD%9B%E9%80%89%E5%9F%BA%E4%BA%8Elasso">&#x53D8;&#x91CF;&#x7B5B;&#x9009;&#xFF08;&#x57FA;&#x4E8E;LASSO&#xFF09;</h3>
+
+<pre data-role="codeBlock" data-info="r" class="language-r">ft1<span class="token operator">=</span>traitglm<span class="token punctuation">(</span>dis<span class="token punctuation">,</span>env<span class="token punctuation">,</span>trait<span class="token punctuation">,</span>method<span class="token operator">=</span><span class="token string">&quot;glm1path&quot;</span><span class="token punctuation">)</span>
+ft1<span class="token operator">$</span>fourth
+<span class="token comment"># LASSO&#x5404;&#x79CD;&#x53D8;&#x91CF;&#x7B5B;&#x9009;&#x60E9;&#x7F5A;&#x540E;&#x628A;&#x6211;&#x7684;&#x5C0F;&#x6570;&#x636E;&#x5168;&#x7ED9;&#x60E9;&#x7F5A;&#x6CA1;&#x4E86;...</span>
+<span class="token comment">#            bio1 bio2 alt soil</span>
+<span class="token comment"># height        0    0   0    0</span>
+<span class="token comment"># leaflen       0    0   0    0</span>
+<span class="token comment"># climbclimb    0    0   0    0</span>
+<span class="token comment"># climbnon      0    0   0    0</span>
+<span class="token comment"># climbsns      0    0   0    0</span>
+<span class="token comment"># growthwood    0    0   0    0</span>
+</pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
