@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "CN"
-title                    : "陈 禹衡 Chen Yuheng"
+title                    : "陈 禹衡"
 title_separator          : "-"
 name                     : &name "陈禹衡"
 description              : &description "personal description"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Yuheng Chen"
   avatar           : "profile.png"
-  bio              : "Ecology and Biodiversity"
+  bio              : "Ecology & Biodiversity"
   location         : "Nanjing"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
@@ -103,11 +103,11 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0003-0677-7470"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
+  steam            : "https://steamcommunity.com/id/823781185/"
   tumblr           :
   twitter          : #"replacethistwitterhandle"
   vine             :
