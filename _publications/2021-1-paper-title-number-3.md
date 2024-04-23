@@ -2,7 +2,6 @@
 title: "Patterns of tree species richness in Southwest China"
 collection: publications
 permalink: /publication/2021-1-paper-title-number-3
-excerpt: 'Using MaxEnt model to predict the dynamics of all tree species in Southwest China'
 date: 2021-01-28
 venue: 'January 28'
 paperurl: 'https://doi.org/10.1007/s10661-021-08872-y'

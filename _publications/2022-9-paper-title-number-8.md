@@ -2,7 +2,6 @@
 title: "基于土地利用变化的江苏盐城湿地然保护区生境质量评估"
 collection: publications
 permalink: /publication/2022-9-paper-title-number-8
-excerpt: '土地利用的时空变化揭示了保护区的保护成效'
 date: 2022-09-15
 venue: 'September 15'
 paperurl: 'https://doi.org/10.12302/j.issn.1000-2006.202105002'

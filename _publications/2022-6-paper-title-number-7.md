@@ -2,7 +2,6 @@
 title: "Diversity patterns and drivers of soil bacterial and fungal communities along elevational gradients in the Southern Himalayas, China"
 collection: publications
 permalink: /publication/2022-6-paper-title-number-7
-excerpt: '不同海拔梯度下土壤微生物多样性的模式和地理气候关联'
 date: 2022-06-14
 venue: 'June 14'
 paperurl: 'https://doi.org/10.1016/j.apsoil.2022.104563'

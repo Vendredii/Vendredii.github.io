@@ -1,0 +1,15 @@
+---
+title: "Drought intensity and post-drought precipitation determine vegetation recovery in a desert steppe in Inner Mongolia, China"
+collection: publications
+permalink: /publication/2024-1-paper-title-number-11
+date: 2024-01-01
+venue: 'January 1'
+paperurl: 'https://doi.org/10.1016/j.scitotenv.2023.167449'
+citation: 'Li, X.; Song, Z.; Hu, Y.; Qiao, J.; Chen, Y.; Wang, S.; Yue, P.; Chen, M.; Ke, Y.; Xu, C.; Yu, Q.; Zuo, X. 2024. Drought intensity and post-drought precipitation determine vegetation recovery in a desert steppe in Inner Mongolia, China. Science of The Total Environment, 906, 167449.'
+---
+**Abstract**
+Extreme drought events are expected to increase in frequency and severity, posing significant threats to ecosystems worldwide. While considerable research has been concentrated on the effects of climate extremes on the stability of grasslands, the process by which grassland productivity may recover after extreme drought events are still not well understood. Here, we conducted a four-year (2019–2022) recovery investigation after four-year's (2015–2018) extreme drought treatments of different intensities (control, press and pulse) to explore the vegetation recovery of desert-grassland ecosystems Inner Mongolia, China. Press drought involved a 66 % reduction in natural precipitation from May to August, while pulse drought reduced it by 100 % during June and July. We found that both press and pulse droughts led to a sharp decrease in aboveground net primary productivity (ANPP) after four years, primarily due to reduced growth, density, and productivity of annual and perennial plants. However, ANPP under pulse drought could recover fully after four years of stopping of drought treatment, and it could not under press drought. Additionally, community structure (i.e., species richness, plant density, and height) fully recovered within 1 year after the end of the two extreme drought treatments. Both plant density and height contributed to the ANPP recovery after press and pulse droughts. Structural equation modeling (SEM) results further revealed that the reduction in ANPP during the extreme drought was primarily due to a decrease in plant density caused by reduced soil water content. The recovery of ANPP in pulse drought was directly caused by increased soil water content in the post-extreme drought. These results suggest that drought intensity and precipitation determine ANPP recovery in a degraded desert steppe. Our findings are crucial for deepening understanding of the processes and mechanisms of ecosystem recovery after extreme drought, as well as for the successful management and protection of grassland ecosystems.
+
+[Download paper here](https://doi.org/10.1016/j.scitotenv.2023.167449)
+
+Recommended citation: Li, X.; Song, Z.; Hu, Y.; Qiao, J.; Chen, Y.; Wang, S.; Yue, P.; Chen, M.; Ke, Y.; Xu, C.; Yu, Q.; Zuo, X. 2024. Drought intensity and post-drought precipitation determine vegetation recovery in a desert steppe in Inner Mongolia, China. Science of The Total Environment, 906, 167449.

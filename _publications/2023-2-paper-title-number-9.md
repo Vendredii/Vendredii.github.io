@@ -2,7 +2,6 @@
 title: "Extinction risk of Chinese angiosperms varies between woody and herbaceous species"
 collection: publications
 permalink: /publication/2023-2-paper-title-number-9
-excerpt: 'Extinction risk of Chinese angiosperms varies between woody and herbaceous species'
 date: 2023-02-1
 venue: 'February 1'
 paperurl: 'https://doi.org/10.1111/ddi.13655'

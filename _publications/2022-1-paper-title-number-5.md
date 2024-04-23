@@ -2,7 +2,6 @@
 title: "基于气候与物种扩散的破坏草入侵区域对未来气候变化的响应"
 collection: publications
 permalink: /publication/2022-1-paper-title-number-5
-excerpt: '使用物种分布模型和物种迁移模型模拟入侵物种的动态'
 date: 2022-01-01
 venue: 'January 28'
 paperurl: 'http://dx.doi.org/10.12171/j.1000-1522.20210063'

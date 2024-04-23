@@ -2,7 +2,6 @@
 title: "气候变化下西南地区12种常见针叶树种适宜分布区预测"
 collection: publications
 permalink: /publication/2019-11-paper-title-number-1
-excerpt: '使用MaxEnt物种分布模型预测西南地区建群针叶树种的动态'
 date: 2019-11-01
 venue: 'November 1'
 paperurl: 'https://doi.org/10.3969/j.issn.1000-2006.201808045'
