@@ -21,7 +21,7 @@ repository               : "vendredii/vendredii.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "profile.png"
   name             : "Yuheng Chen (Chen)"
   pronouns         : # example: "she/her"  
   bio              : "Ecology and Biodiversity"
