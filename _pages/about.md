@@ -15,6 +15,10 @@ The *Publications* section contains all my published papers, which are available
 
 Last but not least, I also plan to update my *Traveling* section. I think I can recommend one of my favorite attractions, restaurants, and a simple review for each destination. I hope this travel section can cover all continents and all biogeographical/vegetation areas around the world.
 
+Visualize my talk and travel
+---
+[a map of every location I've given a talk](https://vendredii.github.io/talkmap/map.html).
+
 Links to my friends
 ---
 [MP](https://mpraiser.github.io) A programmer using Motorola<br>
