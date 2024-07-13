@@ -269,14 +269,6 @@ defaults:
       layout: talk
       author_profile: true
       share: true
-  # _traveling
-  - scope:
-      path: ""
-      type: traveling
-    values:
-      layout: signal
-      author_profile: true
-      share: true
 
 
 # Sass/SCSS
