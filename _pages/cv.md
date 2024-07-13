@@ -20,7 +20,6 @@ Skills
 * Programming
   * R
   * Python
-  * Sub-skill 2.3
 * GIS analysis
   * ArcGIS Pro
   * ESRI
@@ -46,4 +45,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Organizing cannoing with my colleagues?
