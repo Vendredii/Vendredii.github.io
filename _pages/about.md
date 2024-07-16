@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-![MewithGeorge](http://github.com/Vendredii/Vendredii.github.io/blob/master/images/cheers.jpeg?raw=true)
+![MewithGeorge](http://github.com/Vendredii/Vendredii.github.io/blob/master/images/cheers.jpg?raw=true)
 *Alcohol Free Plz*
 
 This blog mainly shares my experiences about ecology, not only in grasslands, but also about forests and oceans. I will share my notes in my **Blog Posts**. They are mainly about R programming and ecological modeling. Some of the notes are about Python because I am trying to figure out it. I will also share some things about life there. **Talks** records the conferences and seminars I have attended, and I plan to share my slides and posters there. The content in **Teaching** is some protocols and assignments for the BSc Ecology2 course.
