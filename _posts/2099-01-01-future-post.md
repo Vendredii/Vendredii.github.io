@@ -6,9 +6,9 @@ tags:
   - BioCliVE
   - Weekend
 ---
-I will showcase some recent plans here as the top blog post
+I will showcase some recent plans here.
 
-- [Limburg (Netherlands)](#limburg-netherlands)
+- [Limburg two days trip](#limburg-two-days-trip)
   - [Maastricht (Day 1)](#maastricht-day-1)
     - [City walk/ride](#city-walkride)
     - [Hiking](#hiking)
@@ -16,7 +16,13 @@ I will showcase some recent plans here as the top blog post
     - [Airbnb/Hostel](#airbnbhostel)
   - [Valkenburg (Day2)](#valkenburg-day2)
 
-# Limburg (Netherlands)
+# Limburg two days trip
+**Aim** Explore the most popular travel destinations in the Netherlands and try to reach the highest mountain in the country
+
+**Location** Maastricht and Valkenburg (2 hours away from Utrecht by Intersity)
+
+**Expense** 200 euros: Public transit (50 euro if you do not have weekend free subscription), Hostel (50 euros), Meals (50 euros), Ticket (50 euros).
+
 ## Maastricht (Day 1)
 ### City walk/ride
 We can rent a bike in NS-fiets first.
