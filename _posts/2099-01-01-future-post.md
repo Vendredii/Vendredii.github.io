@@ -10,7 +10,7 @@ I will showcase some recent plans here as the top blog post
 
 - [Limburg (Netherlands)](#limburg-netherlands)
   - [Maastricht (Day 1)](#maastricht-day-1)
-    - [City walk](#city-walk)
+    - [City walk/ride](#city-walkride)
     - [Hiking](#hiking)
     - [Restaurant](#restaurant)
     - [Airbnb/Hostel](#airbnbhostel)
@@ -18,32 +18,32 @@ I will showcase some recent plans here as the top blog post
 
 # Limburg (Netherlands)
 ## Maastricht (Day 1)
-### City walk
-*We can rent a bike in NS-fiets first.*
+### City walk/ride
+We can rent a bike in NS-fiets first.
 
-*Book Store Dominicanen* A holy bookstore transformed from a church, which will give you the desire to buy books.
+*Book Store Dominicanen* —— A holy bookstore transformed from a church, which will give you the desire to buy books.
 
-*Sint Jan van Maastricht* A pink church closed to the most famous Basiliek van Sint Servaas.
+*Sint Jan van Maastricht* —— A pink church closed to the most famous Basiliek van Sint Servaas.
 
-*Helpoort* An old city gate.
+*Helpoort* —— An old city gate.
 
-*Nolabel interieur & lifestyle* Travel souvenirs and creative home accessories...
+*Nolabel interieur & lifestyle* —— Travel souvenirs and creative home accessories...
 
-*Bonnefanten museum* Large museum about modern arts... But the building is designed by Aldo Rossi (A famous postmodern architect who published *L'architettura della città*).
+*Bonnefanten museum* —— Large museum about modern arts... But the building is designed by Aldo Rossi (A famous postmodern architect who published *L'architettura della città*).
 
 ### Hiking
-*Sint-Pietersberg* Highly recommend! We can stroll through the rare hilly areas in the Netherlands and enjoy the huge traces left by mining in *Toekomstige Oerrr waterspeelplek* among them.
+*Sint-Pietersberg* —— Highly recommend! We can stroll through the rare hilly areas in the Netherlands and enjoy the huge traces left by mining in *Toekomstige Oerrr waterspeelplek* among them.
 
 ### Restaurant
-*Eclair Affair* Nice quality eclair and ice cream!
+*Eclair Affair* —— Nice quality eclair and ice cream!
 
-*[Buitengoed Slavante](https://www.slavante.nl/)* A restaurant with a long history that offers Limburg specialty cuisine in the hiking area.
+*[Buitengoed Slavante](https://www.slavante.nl/)* —— A restaurant with a long history that offers Limburg specialty cuisine in the hiking area.
 
-*La Barceloneta* Have nice Padron peppers.
+*La Barceloneta* —— Have nice Padron peppers.
 
-*De Gouverneur* Belgian cuisine (beer?).
+*De Gouverneur* —— Belgian cuisine (beer?).
 
-*Tasty Thai* If you want to try Tom Yum Goong.
+*Tasty Thai* —— If you want to try Tom Yum Goong.
 
 ### Airbnb/Hostel
 For one night: around 50 euros per person.
