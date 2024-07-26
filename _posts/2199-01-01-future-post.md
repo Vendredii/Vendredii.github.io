@@ -1,11 +1,56 @@
 ---
-title: 'Future Blog Post'
-date: 2199-01-01
-permalink: /posts/2012/08/blog-post-4/
+title: 'Limburg Day Trip Proposal'
+date: 2099-01-01
+permalink: /posts/2099/01/01/future-post/
 tags:
-  - cool posts
-  - category1
-  - category2
+  - BioCliVE
+  - Weekend
 ---
+I will showcase some recent plans here as the top blog post
 
-This post will show up by default. To disable scheduling of future posts, edit `config.yml` and set `future: false`. 
+- [Limburg (Netherlands)](#limburg-netherlands)
+  - [Maastricht (Day 1)](#maastricht-day-1)
+    - [City walk](#city-walk)
+    - [Hiking](#hiking)
+    - [Restaurant](#restaurant)
+    - [Airbnb/Hostel](#airbnbhostel)
+  - [Valkenburg (Day2)](#valkenburg-day2)
+
+# Limburg (Netherlands)
+## Maastricht (Day 1)
+### City walk
+*We can rent a bike in NS-fiets first.*
+
+**Book Store Dominicanen** A holy bookstore transformed from a church, which will give you the desire to buy books.
+
+**Sint Jan van Maastricht** A pink church closed to the most famous Basiliek van Sint Servaas.
+
+**Helpoort** An old city gate.
+
+**Nolabel interieur & lifestyle** Travel souvenirs and creative home accessories...
+
+**Bonnefanten museum** Large museum about modern arts... But the building is designed by Aldo Rossi (A famous postmodern architect who published *L'architettura della città*).
+
+### Hiking
+**Sint-Pietersberg** Highly recommend! We can stroll through the rare hilly areas in the Netherlands and enjoy the huge traces left by mining in *Toekomstige Oerrr waterspeelplek* among them.
+
+### Restaurant
+**Eclair Affair** Nice quality eclair and ice cream!
+
+**[Buitengoed Slavante](https://www.slavante.nl/)** A restaurant with a long history that offers Limburg specialty cuisine in the hiking area.
+
+**La Barceloneta** Have nice Padron peppers.
+
+**De Gouverneur** Belgian cuisine (beer?).
+
+**Tasty Thai** If you want to try Tom Yum Goong.
+
+### Airbnb/Hostel
+For one night: around 50 euros per person.
+
+## Valkenburg (Day2)
+**Kabelbaan Valkenburg** It's a mountain/hill. We can climb up to the mountain, and see the whole Limburg from the *Wilhelminatoren* at the top of the mountain. We can also take a exciting *rodelbaan* to slide down the mountain. We may spend 2 hours and [10 euros](https://kabelbaanvalkenburg.nl/) there.
+
+**Grotbiken In Valkenburg** We will cycling 8km in the underground cave with special mountain bike and head light! Very safe with a professional tour guide from 3.30 pm to 5 pm, need [32.5 euros](https://valkenburgadventure.nl/grotbiken-in-valkenburg/).
+
+**Kasteelruine & Fluweelengrot** The only high castle and the most beautiful cave in the Netherlands. We can experience a lot of medieval atmosphere in the cave and castle. The combined ticket is [16 euros](https://www.kasteelvalkenburg.nl/) and we need about 2 hours to visit them all.
