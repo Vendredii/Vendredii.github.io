@@ -1,13 +1,20 @@
-# Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
+# Ignore the contents of the _site directory and other cache directories
+_site/
+.sass-cache/
 
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
+# Ignore the directory for local files during development
+local/
 
-# Temporary lock file while building
-/.hugo_build.lock
+# Ignore the Gemfile that is generated
+Gemfile.lock
+
+# Ignore files created by npm
+node_modules
+package-lock.json
+
+# Ignore the vendor file at root level and bundle for alternative installation
+/vendor/
+.bundle/
+
+# Ignore folders related to IDEs
+.vscode/
