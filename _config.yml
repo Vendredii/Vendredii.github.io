@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Chen"
+title                    : "Yuheng Chen"
 title_separator          : "-"
 name                     : &name "Yuheng Chen"
 description              : &description "personal website"
@@ -62,7 +62,7 @@ author:
   keybase          : # Username
   instagram        : "_edenchen_"
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "yuheng-chen-923b5a111"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
