@@ -1,0 +1,24 @@
+# One entry per paper, shown in the order written here (put the newest first).
+# Only `title` is required. Your own name is bolded automatically when an
+# author entry contains the `name` set in profile.yml.
+#
+# To hide the Publications section, delete every entry below.
+
+- title: "An Example Paper Title"
+  authors:
+    - Your Name
+    - First Coauthor
+    - Second Coauthor
+  venue: "Conference or Journal Name"
+  year: 2025
+  note: "Oral"            # optional short tag
+  links:                  # optional, any names you like
+    Paper: https://example.com/paper.pdf
+    Code: https://github.com/Vendredii
+
+- title: "Another Example Paper Title"
+  authors:
+    - First Coauthor
+    - Your Name
+  venue: "Under review"
+  year: 2024

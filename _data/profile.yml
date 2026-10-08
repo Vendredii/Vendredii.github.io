@@ -1,0 +1,53 @@
+# Everything about you. Delete or comment out any line you don't need;
+# the matching part of the page disappears on its own.
+
+name: "Your Name"
+position: "Title or Position"
+affiliation: "Affiliation Name"
+photo: /assets/images/profile.png
+
+# Markdown is allowed. Leave a blank line between paragraphs.
+bio: |
+  Write a short introduction here: who you are, where you work or study,
+  and what you are interested in.
+
+  A second paragraph can cover your research interests, and you can add
+  [links](https://example.com) in Markdown.
+
+# Shown as a row of links under your bio, in this order.
+links:
+  - name: Email
+    url: mailto:your@email.com
+  - name: GitHub
+    url: https://github.com/Vendredii
+  # - name: Google Scholar
+  #   url: https://scholar.google.com/citations?user=YOUR_ID
+
+# How many news items (from the top of news.yml) the home page shows.
+news_on_home: 5
+
+# ---- CV page ----
+# Everything below appears on the CV page, not on the home page.
+
+# Optional: put your CV file in assets/ and a download link appears.
+# cv_pdf: /assets/cv.pdf
+
+# Newest first. `logo` and `detail` are optional.
+education:
+  - name: University Name
+    logo: /assets/images/badges/UU.png
+    detail: Degree, Department
+    date: Sep. 2024 - present
+  - name: University Name
+    logo: /assets/images/badges/NJFU.jpg
+    detail: Degree, Department
+    date: Sep. 2020 - Jun. 2024
+
+# experience:
+#   - name: Company or Lab
+#     detail: Research Intern
+#     date: Jun. 2023 - Sep. 2023
+
+# awards:
+#   - name: Award Name
+#     date: 2024

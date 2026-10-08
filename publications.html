@@ -1,0 +1,30 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+---
+{%- assign me = site.data.profile -%}
+<section>
+    <h1>Publications</h1>
+    <ul class="pubs">
+        {% for pub in site.data.publications %}
+        <li>
+            <div class="pub-title">{{ pub.title }}</div>
+            {% if pub.authors.size > 0 %}
+            <div class="pub-authors">
+                {% for author in pub.authors %}{% if author contains me.name %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
+            </div>
+            {% endif %}
+            <div class="pub-venue">
+                <em>{{ pub.venue }}</em>{% if pub.venue and pub.year %}, {% endif %}{{ pub.year }}
+                {% if pub.note %}<span class="tag">{{ pub.note }}</span>{% endif %}
+            </div>
+            {% if pub.links %}
+            <div class="links">
+                {% for link in pub.links %}<a href="{{ link[1] }}">{{ link[0] }}</a>{% endfor %}
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>

@@ -1,0 +1,8 @@
+# Short updates, shown in the order written here (put the newest first).
+# `text` may contain Markdown. Delete every entry to hide the News section.
+
+- date: "Oct 2026"
+  text: "This website went online."
+
+- date: "Sep 2024"
+  text: "Example item with a [link](https://example.com)."

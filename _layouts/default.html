@@ -1,31 +1,31 @@
----
-layout: compress
----
+{%- assign me = site.data.profile -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ me.name }}</title>
+    <meta name="description" content="{{ me.name }}{% if me.position %}, {{ me.position }}{% endif %}{% if me.affiliation %}, {{ me.affiliation }}{% endif %}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-name" href="{{ '/' | relative_url }}">{{ me.name }}</a>
+        <nav>
+            <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
+            {% if site.data.publications.size > 0 %}
+            <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} class="active"{% endif %}>Publications</a>
+            {% endif %}
+            <a href="{{ '/cv/' | relative_url }}"{% if page.url == '/cv/' %} class="active"{% endif %}>CV</a>
+        </nav>
+    </header>
 
-{% include base_path %}
+    <main>
+        {{ content }}
+    </main>
 
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
-
-  <body>
-
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
-
-    {% include scripts.html %}
-
-  </body>
+    <footer class="site-footer">
+        &copy; {{ site.time | date: "%Y" }} {{ me.name }}
+    </footer>
+</body>
 </html>
