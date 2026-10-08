@@ -1,24 +1,27 @@
 # One entry per paper, shown in the order written here (put the newest first).
-# Only `title` is required. Your own name is bolded automatically when an
-# author entry contains the `name` set in profile.yml.
+# Only `title` is required. Your own name is bolded automatically: write it
+# in the author list exactly as `name_in_papers` is set in profile.yml.
+# A trailing * (e.g. "Chen, Y.*") is allowed.
 #
-# To hide the Publications section, delete every entry below.
+# They appear as a section of the CV page. To hide that section, delete
+# every entry below.
 
-- title: "An Example Paper Title"
+- title: "Patterns of tree species richness in Southwest China"
   authors:
-    - Your Name
-    - First Coauthor
-    - Second Coauthor
-  venue: "Conference or Journal Name"
-  year: 2025
-  note: "Oral"            # optional short tag
+    - Lu, S.
+    - Zhou, S.
+    - Yin, X.
+  venue: "Environmental Monitoring and Assessment"
+  year: 2021
   links:                  # optional, any names you like
-    Paper: https://example.com/paper.pdf
-    Code: https://github.com/Vendredii
+    Paper: https://link.springer.com/article/10.1007/s10661-021-08872-y
 
-- title: "Another Example Paper Title"
+- title: "Combining the Effects of Global Warming, Land Use Change and Dispersal Limitations to Predict the Future Distributions of East Asian Cerris Oaks (Quercus Section Cerris, Fagaceae) in China"
   authors:
-    - First Coauthor
-    - Your Name
-  venue: "Under review"
-  year: 2024
+    - Chen, Y.
+    - Li, Y.
+    - Mao, L.
+  venue: "Environmental Monitoring and Assessment"
+  year: 2021
+  links:                  # optional, any names you like
+    Paper: https://doi.org/10.3390/f13030367

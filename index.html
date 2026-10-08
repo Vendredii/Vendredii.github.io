@@ -2,33 +2,30 @@
 layout: default
 ---
 {%- assign me = site.data.profile -%}
-{%- assign news = site.data.news -%}
+{%- assign latest = site.data.news | first -%}
+{% if me.photo %}
+<figure class="hero">
+    <img src="{{ me.photo | relative_url }}" alt="{{ me.photo_caption | default: me.name }}">
+    {% if me.photo_caption %}<figcaption>{{ me.photo_caption }}</figcaption>{% endif %}
+</figure>
+{% endif %}
+
 <section class="intro">
-    {% if me.photo %}<img class="photo" src="{{ me.photo | relative_url }}" alt="{{ me.name }}">{% endif %}
-    <div>
-        <h1>{{ me.name }}</h1>
-        <p class="position">
-            {{ me.position }}{% if me.position and me.affiliation %}, {% endif %}{{ me.affiliation }}
-        </p>
-        {{ me.bio | markdownify }}
-        {% if me.links.size > 0 %}
-        <p class="links">
-            {% for link in me.links %}<a href="{% if link.url contains ':' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}">{{ link.name }}</a>{% endfor %}
-        </p>
-        {% endif %}
-    </div>
+    <h1>{{ me.name }}</h1>
+    <p class="position">
+        {{ me.position }}{% if me.position and me.affiliation %}, {% endif %}{{ me.affiliation }}
+    </p>
+    {{ me.bio | markdownify }}
+    {% if me.links.size > 0 %}
+    <p class="links">
+        {% for link in me.links %}<a href="{% if link.url contains ':' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}">{{ link.name }}</a>{% endfor %}
+    </p>
+    {% endif %}
 </section>
 
-{% if news.size > 0 %}
+{% if latest %}
 <section>
-    <h2>News</h2>
-    <ul class="rows">
-        {% for item in news limit: me.news_on_home %}
-        <li>
-            <span class="date">{{ item.date }}</span>
-            <div>{{ item.text | markdownify }}</div>
-        </li>
-        {% endfor %}
-    </ul>
+    <h2>Latest news <a class="more" href="{{ '/news/' | relative_url }}">All news</a></h2>
+    {% include news_item.html item=latest %}
 </section>
 {% endif %}

@@ -1,4 +1,5 @@
 {%- assign me = site.data.profile -%}
+{%- assign projects = site.projects | sort: "order" -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +14,18 @@
         <a class="site-name" href="{{ '/' | relative_url }}">{{ me.name }}</a>
         <nav>
             <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
-            {% if site.data.publications.size > 0 %}
-            <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} class="active"{% endif %}>Publications</a>
+            {% if site.data.news.size > 0 %}
+            <a href="{{ '/news/' | relative_url }}"{% if page.url == '/news/' %} class="active"{% endif %}>News</a>
+            {% endif %}
+            {% if projects.size > 0 %}
+            <div class="menu">
+                <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} class="active"{% endif %}>Projects</a>
+                <div class="submenu">
+                    {% for project in projects %}
+                    <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
             {% endif %}
             <a href="{{ '/cv/' | relative_url }}"{% if page.url == '/cv/' %} class="active"{% endif %}>CV</a>
         </nav>

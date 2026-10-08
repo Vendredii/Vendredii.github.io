@@ -1,10 +1,20 @@
 # Everything about you. Delete or comment out any line you don't need;
 # the matching part of the page disappears on its own.
 
-name: "Your Name"
-position: "Title or Position"
-affiliation: "Affiliation Name"
-photo: /assets/images/profile.png
+name: "Yuheng Chen"
+position: "PhD Candidate"
+affiliation: "Utrecht University"
+
+# Your name exactly as it is written in the author lists in publications.yml.
+# Authors matching it are shown in bold.
+name_in_papers: "Chen, Y."
+
+# ---- Home page ----
+
+# The large photo at the top of the home page (for example you with the lab).
+# A wide landscape picture works best; it is shown uncropped.
+photo: /assets/images/placeholder.svg
+photo_caption: "Me in Copenhagen in 2023."
 
 # Markdown is allowed. Leave a blank line between paragraphs.
 bio: |
@@ -17,31 +27,38 @@ bio: |
 # Shown as a row of links under your bio, in this order.
 links:
   - name: Email
-    url: mailto:your@email.com
+    url: mailto:y.chen3@uu.nl
+  - name: Google Scholar
+    url: https://scholar.google.com/citations?user=j2bishkAAAAJ
   - name: GitHub
     url: https://github.com/Vendredii
-  # - name: Google Scholar
-  #   url: https://scholar.google.com/citations?user=YOUR_ID
-
-# How many news items (from the top of news.yml) the home page shows.
-news_on_home: 5
+  # - name: LinkedIn
+  #   url: https://www.linkedin.com/in/your-id
+  # - name: ORCID
+  #   url: https://orcid.org/0000-0000-0000-0000
 
 # ---- CV page ----
 # Everything below appears on the CV page, not on the home page.
+# Publications are also listed there; they come from publications.yml.
 
-# Optional: put your CV file in assets/ and a download link appears.
-# cv_pdf: /assets/cv.pdf
+# The "Download PDF" button on the CV page. Save your CV as assets/cv.pdf,
+# or comment this line out to hide the button.
+cv_pdf: /assets/cv.pdf
 
 # Newest first. `logo` and `detail` are optional.
 education:
-  - name: University Name
+  - name: Utrecht University
     logo: /assets/images/badges/UU.png
-    detail: Degree, Department
-    date: Sep. 2024 - present
-  - name: University Name
+    detail: PhD Candidate, Department of Biology, Ecology and Biodiversity
+    date: Nov. 2022 - present
+  - name: Nanjing Forestry University
     logo: /assets/images/badges/NJFU.jpg
-    detail: Degree, Department
-    date: Sep. 2020 - Jun. 2024
+    detail: MSc. in Ecology
+    date: Sep. 2019 - Jul. 2022
+  - name: Southwest Forestry University
+    logo: /assets/images/badges/SWFU.png
+    detail: BSc. in Forestry
+    date: Sep. 2015 - Jul. 2019
 
 # experience:
 #   - name: Company or Lab

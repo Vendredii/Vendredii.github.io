@@ -1,0 +1,20 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+{%- assign projects = site.projects | sort: "order" -%}
+<section>
+    <h1>Projects</h1>
+    {% for project in projects %}
+    <article class="card">
+        <a class="card-image" href="{{ project.url | relative_url }}">
+            <img src="{{ project.image | default: '/assets/images/placeholder.svg' | relative_url }}" alt="">
+        </a>
+        <div>
+            <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+            <p>{{ project.summary }}</p>
+        </div>
+    </article>
+    {% endfor %}
+</section>

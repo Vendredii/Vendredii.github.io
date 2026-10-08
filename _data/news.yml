@@ -1,8 +1,25 @@
-# Short updates, shown in the order written here (put the newest first).
-# `text` may contain Markdown. Delete every entry to hide the News section.
+# News items, newest first. The FIRST entry is the one shown on the home page;
+# all entries appear on the News page.
+#
+#   date    shown as written
+#   title   headline
+#   image   optional picture
+#   text    short abstract, Markdown allowed
+#   link    optional "Read more" address
 
 - date: "Oct 2026"
-  text: "This website went online."
+  title: "This website went online"
+  image: /assets/images/placeholder.svg
+  text: >-
+    A two or three sentence abstract of the news goes here. Say what happened
+    and why it matters, and link out for the details.
+  link: https://example.com
 
 - date: "Sep 2024"
-  text: "Example item with a [link](https://example.com)."
+  title: "An older example item"
+  image: /assets/images/placeholder.svg
+  text: "Older items only appear on the News page. They may contain [links](https://example.com)."
+
+- date: "Jun 2024"
+  title: "An item without a picture"
+  text: "The image is optional."

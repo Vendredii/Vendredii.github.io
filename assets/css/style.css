@@ -5,7 +5,7 @@
     --accent: #0b57d0;
     --bg: #ffffff;
     --border: #e4e7eb;
-    --width: 46rem;
+    --width: 50rem;
     --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
         "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -31,11 +31,13 @@ body {
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
+img { max-width: 100%; }
 
-/* Header */
+/* Header and navigation */
 .site-header {
     position: sticky;
     top: 0;
+    z-index: 10;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -52,31 +54,73 @@ a:hover { text-decoration: underline; }
 .site-header nav a { color: var(--muted); }
 .site-header nav a.active { color: var(--text); font-weight: 600; }
 
+/* Projects drop-down: opens on hover or keyboard focus */
+.menu { position: relative; }
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 13rem;
+    padding: 0.4rem 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+.menu:hover .submenu, .menu:focus-within .submenu { display: block; }
+.submenu a { display: block; padding: 0.35rem 0.9rem; }
+
 /* Page body */
 main { max-width: var(--width); margin: 0 auto; padding: 0 1.25rem; }
 section { padding: 2rem 0 0.5rem; }
 
 h1 { margin: 0 0 1rem; font-size: 1.9rem; line-height: 1.25; }
-.intro h1 { margin: 0; }
 h2 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     margin: 0 0 1rem;
     padding-bottom: 0.35rem;
     border-bottom: 1px solid var(--border);
     font-size: 1.2rem;
 }
+h3 { margin: 0 0 0.3rem; font-size: 1.05rem; line-height: 1.35; }
 p { margin: 0 0 0.9rem; }
+.more { font-size: 0.9rem; font-weight: 400; }
 
-/* Intro */
-.intro { display: flex; gap: 2rem; align-items: flex-start; padding-top: 2.5rem; }
-.photo { width: 10rem; height: 10rem; flex: none; border-radius: 50%; object-fit: cover; }
+/* Large photo (home page and project pages) */
+.hero { margin: 1.5rem 0 0; }
+.hero img { display: block; width: 100%; border-radius: 10px; }
+.hero figcaption { margin-top: 0.4rem; color: var(--muted); font-size: 0.88rem; }
+
+/* Home page introduction */
+.intro h1 { margin: 0; }
 .position { color: var(--muted); margin-bottom: 1rem; }
-
 .links { display: flex; flex-wrap: wrap; gap: 0.2rem 1rem; margin: 0; font-size: 0.95rem; }
 
-/* Dated rows: news, education, experience, awards */
+/* Cards: news items and the project list */
+.card { display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 1.75rem; }
+.card-image { flex: none; width: 38%; max-width: 15rem; }
+.card-image img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; }
+.card-date { color: var(--muted); font-size: 0.88rem; }
+.card h3 a { color: var(--text); }
+
+/* CV page title with the PDF button */
+.page-title { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.page-title h1 { margin: 0; }
+.button {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    font-size: 0.92rem;
+    white-space: nowrap;
+}
+.button:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
+
+/* Dated rows on the CV page */
 .rows, .pubs { list-style: none; margin: 0; padding: 0; }
 .rows li { display: flex; gap: 1.25rem; margin-bottom: 0.7rem; }
-.rows p { margin: 0; }
 .date { flex: none; width: 9.5rem; color: var(--muted); font-size: 0.92rem; padding-top: 0.08rem; }
 .entry { display: flex; gap: 0.6rem; align-items: flex-start; }
 .logo { width: 1.4rem; height: 1.4rem; flex: none; margin-top: 0.15rem; object-fit: contain; }
@@ -95,6 +139,10 @@ p { margin: 0 0 0.9rem; }
     font-size: 0.8rem;
 }
 
+/* Project pages written in Markdown */
+.prose h2 { display: block; margin-top: 1.75rem; }
+.prose .hero { margin: 0 0 1.5rem; }
+
 .site-footer {
     max-width: var(--width);
     margin: 2.5rem auto 0;
@@ -105,8 +153,9 @@ p { margin: 0 0 0.9rem; }
 }
 
 @media (max-width: 600px) {
-    .intro { flex-direction: column; gap: 1.25rem; }
-    .photo { width: 8rem; height: 8rem; }
+    .card { gap: 0.9rem; }
     .rows li { flex-direction: column; gap: 0; }
     .date { width: auto; }
+    /* On phones, "Projects" simply opens the project list page. */
+    .submenu { display: none !important; }
 }

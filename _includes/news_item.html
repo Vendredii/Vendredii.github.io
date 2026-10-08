@@ -1,0 +1,11 @@
+{%- comment -%} One news entry. Usage: {% include news_item.html item=item %} {%- endcomment -%}
+{%- assign item = include.item -%}
+<article class="card">
+    {% if item.image %}<div class="card-image"><img src="{{ item.image | relative_url }}" alt=""></div>{% endif %}
+    <div>
+        <div class="card-date">{{ item.date }}</div>
+        <h3>{{ item.title }}</h3>
+        {{ item.text | markdownify }}
+        {% if item.link %}<p class="links"><a href="{% if item.link contains ':' %}{{ item.link }}{% else %}{{ item.link | relative_url }}{% endif %}">Read more</a></p>{% endif %}
+    </div>
+</article>

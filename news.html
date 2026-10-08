@@ -1,0 +1,11 @@
+---
+layout: default
+title: News
+permalink: /news/
+---
+<section>
+    <h1>News</h1>
+    {% for item in site.data.news %}
+    {% include news_item.html item=item %}
+    {% endfor %}
+</section>
