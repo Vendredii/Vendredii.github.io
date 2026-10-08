@@ -1,4 +1,6 @@
-# One entry per paper, shown in the order written here (put the newest first).
+# One entry per paper. The page sorts them by `year`, newest first, so just
+# add new papers at the bottom. Within the same year, the entry lower in
+# this file is shown first.
 # Only `title` is required. Your own name is bolded automatically: write it
 # in the author list exactly as `name_in_papers` is set in profile.yml.
 # A trailing * (e.g. "Chen, Y.*") is allowed.
@@ -11,6 +13,13 @@
     - Lu, S.
     - Zhou, S.
     - Yin, X.
+    - Zhang, C.
+    - Li, R.
+    - Chen, J.
+    - Ma, D.
+    - Wang, Y.
+    - Yu, Z.
+    - Chen, Y.
   venue: "Environmental Monitoring and Assessment"
   year: 2021
   links:                  # optional, any names you like
@@ -21,7 +30,129 @@
     - Chen, Y.
     - Li, Y.
     - Mao, L.
-  venue: "Environmental Monitoring and Assessment"
+  venue: "Forests"
   year: 2021
   links:                  # optional, any names you like
     Paper: https://doi.org/10.3390/f13030367
+
+- title: "Diversity patterns and drivers of soil bacterial and fungal communities along elevational gradients in the Southern Himalayas, China"
+  authors:
+    - Yang, N.
+    - Li, X.
+    - Liu, D.
+    - Zhang, Y.
+    - Chen, Y.
+    - Wang, B.
+    - Hua, J.
+    - Zhang, J.
+    - Peng, S.
+    - Ge, Z.
+    - Li, J.
+    - Ruan, H.
+    - Mao, L.
+  venue: "Applied Soil Ecology"
+  year: 2022
+  links:                  # optional, any names you like
+    Paper: https://www.sciencedirect.com/science/article/pii/S0929139322001792
+
+- title: "Extinction risk of Chinese angiosperms varies between woody and herbaceous species"
+  authors:
+    - Chen, Y.
+    - Wu, Y.
+    - Dong, Y.
+    - Yao, L.
+    - Ge, Z.
+    - George, O.
+    - Feng, G.
+    - Mao, L.
+  venue: "Diversity and Distributions"
+  year: 2023
+  links:                  # optional, any names you like
+    Paper: https://doi.org/10.1111/ddi.13655
+
+- title: "Geographical patterns and determinants in plant reproductive phenology duration"
+  authors:
+    - Wang, X.
+    - Morin, X.
+    - Zhang, J.
+    - Chen, G.
+    - Mao, L.
+    - Chen, Y.
+    - Song, Z.
+    - Du, Y.
+    - Ma, K.
+  venue: "Frontiers in Plant Science"
+  year: 2023
+  links:                  # optional, any names you like
+    Paper: https://doi.org/10.3389/fpls.2023.1199316
+
+- title: "Drought intensity and post-drought precipitation determine vegetation recovery in a desert steppe in Inner Mongolia, China"
+  authors:
+    - Li, X.
+    - Song, Z.
+    - Hu, Y.
+    - Qiao, J.
+    - Chen, Y.
+    - Wang, S.
+    - Yue, P.
+    - Chen, M.
+    - Ke, Y.
+    - Xu, C.
+    - Yu, Q.
+    - Zuo, X.
+  venue: "Science of the Total Environment"
+  year: 2024
+  links:                  # optional, any names you like
+    Paper: https://www.sciencedirect.com/science/article/pii/S004896972306076X
+
+- title: "More than just pandas: Urgent research needed on China's native plant biodiversity"
+  authors:
+    - Chen, Y.
+    - Yao, L.
+    - Dong, Y.
+    - Zhang, M.
+    - Yang, Y.
+    - Primack, R.B.
+    - Barry, K.E.
+    - Mao, L.
+  venue: "Biological Conservation"
+  year: 2024
+  links:                  # optional, any names you like
+    Paper: https://www.sciencedirect.com/science/article/pii/S0006320723004895
+
+- title: "'Slow-Fast' Plant Trait Spectra Are Associated With Ecological Niches Across Global Climatic Gradients"
+  authors:
+    - Chen, Y.
+    - Hautier, Y.
+    - Kowalchuk, G.A.
+    - Barry, K.E.
+  venue: "Global Ecology and Biogeography"
+  year: 2025
+  links:                  # optional, any names you like
+    Paper: https://doi.org/10.1111/geb.70115
+
+- title: "Identifying divergence time and paleoclimate change hotspots for better conservation under future climate change"
+  authors:
+    - Chen, Y.
+    - Lembrechts, J.J.
+    - Hautier, Y.
+    - Xu, D.
+    - Yao, L.
+    - Dong, Y.
+    - Mao, L.
+  venue: "Biological Conservation"
+  year: 2025
+  links:                  # optional, any names you like
+    Paper: https://www.sciencedirect.com/science/article/pii/S0006320725005361
+
+- title: "Parallel yet asymmetric community assembly patterns of phyllosphere fungi and bacteria in subtropical forests"
+  authors:
+    - Xie, L.
+    - Ou, Y.
+    - Chen, Y.
+    - Ding, H.
+    - Fang, Y.
+  venue: "Forest Ecology and Management"
+  year: 2025
+  links:                  # optional, any names you like
+    Paper: https://www.sciencedirect.com/science/article/pii/S0378112725007303

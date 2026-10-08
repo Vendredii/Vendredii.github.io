@@ -13,8 +13,8 @@ name_in_papers: "Chen, Y."
 
 # The large photo at the top of the home page (for example you with the lab).
 # A wide landscape picture works best; it is shown uncropped.
-photo: /assets/images/placeholder.svg
-photo_caption: "Me in Copenhagen in 2023."
+photo: /assets/images/profile.jpg
+photo_caption: "Me in Banff."
 
 # Markdown is allowed. Leave a blank line between paragraphs.
 bio: |
@@ -27,7 +27,7 @@ bio: |
 # Shown as a row of links under your bio, in this order.
 links:
   - name: Email
-    url: mailto:y.chen3@uu.nl
+    url: mailto:edenchen1226@outlook.com
   - name: Google Scholar
     url: https://scholar.google.com/citations?user=j2bishkAAAAJ
   - name: GitHub

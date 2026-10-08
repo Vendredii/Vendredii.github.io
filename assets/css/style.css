@@ -127,9 +127,10 @@ p { margin: 0 0 0.9rem; }
 .detail { color: var(--muted); font-size: 0.92rem; }
 
 /* Publications */
-.pubs li { margin-bottom: 1.25rem; }
-.pub-title { font-weight: 600; }
-.pub-authors, .pub-venue { font-size: 0.95rem; }
+.pubs { font-size: 0.88rem; line-height: 1.5; }
+.pubs li { margin-bottom: 0.9rem; }
+.pub-title { font-weight: 600; font-size: 0.95rem; }
+.pubs .links { font-size: inherit; }
 .pub-venue { color: var(--muted); }
 .tag {
     margin-left: 0.4rem;

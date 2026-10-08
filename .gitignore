@@ -11,3 +11,6 @@ Gemfile.lock
 
 # Copy of the original template, kept locally only
 template-backup.zip
+
+# Full-size original of the home photo (43 MB); the site uses profile.jpg
+assets/images/profile.png

@@ -23,7 +23,11 @@ permalink: /cv/
 <section>
     <h2>Publications</h2>
     <ul class="pubs">
-        {% for pub in pubs %}
+        {%- comment -%} Newest year first; within a year, later entries in the file come first. {%- endcomment -%}
+        {% assign years = pubs | group_by: "year" | sort: "name" | reverse %}
+        {% for group in years %}
+        {% assign year_pubs = group.items | reverse %}
+        {% for pub in year_pubs %}
         <li>
             <div class="pub-title">{{ pub.title }}</div>
             {% if pub.authors.size > 0 %}
@@ -41,6 +45,7 @@ permalink: /cv/
             </div>
             {% endif %}
         </li>
+        {% endfor %}
         {% endfor %}
     </ul>
 </section>
