@@ -2,7 +2,7 @@
 layout: default
 ---
 {%- assign me = site.data.profile -%}
-{%- assign latest = site.data.news | first -%}
+{%- assign latest = site.news | sort: "date" | last -%}
 {% if me.photo %}
 <figure class="hero">
     <img src="{{ me.photo | relative_url }}" alt="{{ me.photo_caption | default: me.name }}">

@@ -5,6 +5,7 @@ permalink: /cv/
 ---
 {%- assign me = site.data.profile -%}
 {%- assign paper_name = me.name_in_papers | default: me.name -%}
+{%- assign pubs = site.data.publications -%}
 {%- comment -%}
   To remove or reorder CV sections, edit this list. "publications" comes from
   _data/publications.yml; every other name is a list in _data/profile.yml.
@@ -18,7 +19,6 @@ permalink: /cv/
 {% for key in sections %}
 {% if key == "publications" %}
 
-{% assign pubs = site.data.publications %}
 {% if pubs.size > 0 %}
 <section>
     <h2>Publications</h2>
@@ -32,7 +32,7 @@ permalink: /cv/
             <div class="pub-title">{{ pub.title }}</div>
             {% if pub.authors.size > 0 %}
             <div class="pub-authors">
-                {% for author in pub.authors %}{% assign plain = author | remove: "*" | strip %}{% if plain == paper_name %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}; {% endunless %}{% endfor %}
+                {% for author in pub.authors %}{% assign plain = author | remove: "*" | strip %}{% if plain == paper_name %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
             </div>
             {% endif %}
             <div class="pub-venue">
@@ -76,3 +76,28 @@ permalink: /cv/
 
 {% endif %}
 {% endfor %}
+
+{%- comment -%}
+  Collaboration network on a map. Places and the people at each come from
+  _data/collaborators.yml; links come from the author lists in
+  _data/publications.yml. The script is assets/js/collab-network.js.
+{%- endcomment -%}
+{% assign places = site.data.collaborators %}
+{% if places.size > 0 %}
+<section>
+    <h2>Collaboration network</h2>
+    <p class="hint">Circles are the cities where my co-authors work, sized by the number of joint papers. Lines join places that published together (thicker for more papers), and colours mark groups that often collaborate. Hover over a circle to highlight its links; click it to see the institutions and people.</p>
+    <div id="collab-map" class="map"></div>
+</section>
+
+<script>
+    window.CV_DATA = {
+        me: {{ paper_name | jsonify }},
+        publications: {{ pubs | jsonify }},
+        places: {{ places | jsonify }}
+    };
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="{{ '/assets/js/collab-network.js' | relative_url }}"></script>
+{% endif %}

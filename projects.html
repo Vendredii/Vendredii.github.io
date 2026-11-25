@@ -4,6 +4,8 @@ title: Projects
 permalink: /projects/
 ---
 {%- assign projects = site.projects | sort: "order" -%}
+{%- comment -%} Projects without a date get the build time from Jekyll; skip those. {%- endcomment -%}
+{%- assign built = site.time | date: "%s" -%}
 <section>
     <h1>Projects</h1>
     {% for project in projects %}
@@ -12,6 +14,8 @@ permalink: /projects/
             <img src="{{ project.image | default: '/assets/images/placeholder.svg' | relative_url }}" alt="">
         </a>
         <div>
+            {% assign dated = project.date | date: "%s" %}
+            {% if dated != built %}<div class="card-date">{{ project.date | date: "%-d %B %Y" }}</div>{% endif %}
             <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
             <p>{{ project.summary }}</p>
         </div>

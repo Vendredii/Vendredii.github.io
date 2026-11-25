@@ -14,8 +14,8 @@
         <a class="site-name" href="{{ '/' | relative_url }}">{{ me.name }}</a>
         <nav>
             <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
-            {% if site.data.news.size > 0 %}
-            <a href="{{ '/news/' | relative_url }}"{% if page.url == '/news/' %} class="active"{% endif %}>News</a>
+            {% if site.news.size > 0 %}
+            <a href="{{ '/news/' | relative_url }}"{% if page.url contains '/news/' %} class="active"{% endif %}>News</a>
             {% endif %}
             {% if projects.size > 0 %}
             <div class="menu">

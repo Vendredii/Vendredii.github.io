@@ -1,7 +1,7 @@
 # Site-wide settings. Jekyll does NOT reload this file while `jekyll serve`
 # is running; restart the server after editing it.
 #
-# Page content does not live here. Edit the files in _data/ and _projects/.
+# Page content does not live here. Edit the files in _data/, _news/ and _projects/.
 
 url: "https://vendredii.github.io"
 baseurl: ""
@@ -12,6 +12,10 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  # Every Markdown file in _news/ becomes its own page at /news/<year>/<file-name>/.
+  news:
+    output: true
+    permalink: /news/:year/:title/
 
 defaults:
   - scope:
@@ -19,6 +23,11 @@ defaults:
       type: projects
     values:
       layout: project
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: news_post
 
 exclude:
   - README.md

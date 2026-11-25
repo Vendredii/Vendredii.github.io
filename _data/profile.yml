@@ -7,7 +7,7 @@ affiliation: "Utrecht University"
 
 # Your name exactly as it is written in the author lists in publications.yml.
 # Authors matching it are shown in bold.
-name_in_papers: "Chen, Y."
+name_in_papers: "Yuheng Chen"
 
 # ---- Home page ----
 
@@ -18,11 +18,34 @@ photo_caption: "Me in Banff."
 
 # Markdown is allowed. Leave a blank line between paragraphs.
 bio: |
-  Write a short introduction here: who you are, where you work or study,
-  and what you are interested in.
+  As a plant ecologist, I am working on how global change affects plants and
+  terrestrial ecosystems. I study how functional traits respond to global
+  change, drought in particular, across levels of organisation from
+  individuals to communities. I also try to understand the mechanisms by
+  which plants and soil persist as an integrated system under global change,
+  and how we might apply those mechanisms to protect our beautiful planet.
 
-  A second paragraph can cover your research interests, and you can add
-  [links](https://example.com) in Markdown.
+  My PhD project is part of the
+  [BioCliVE](https://www.uu.nl/en/research/ecology-and-biodiversity/research/uu-bioclive)
+  and [Ecotron](https://www.npec.nl/phenotyping-modules/module-1-ecotron/)
+  experiments. In it, I moved from species richness to functional traits, and
+  from communities to species to the globe, to understand
+  biodiversity–ecosystem functioning (BEF) relationships under stress, and the
+  relationship between plant strategies and species distributions. Under soil
+  and air drought, plant species richness reduced soil water loss and
+  increased aboveground biomass, but richness alone did not explain these
+  effects. Functional traits helped to explain them: the mixture advantage was
+  associated with the functional composition of communities, which in turn
+  reflected the growing dominance of a single species in the presence of
+  others. Above- and belowground responses were only partly coupled, both
+  within experimental communities and across global climatic gradients.
+  Together, these findings show that understanding how diversity affects
+  ecosystem functioning under drought requires knowing not only how many
+  species a community contains, but also which species they are, and how they
+  interact with their neighbours. Uncovering the mechanisms that determine
+  which species become dominant is the next step towards predicting how plant
+  communities will assemble and function under climate change, and towards
+  restoring grasslands that can sustain their functions.
 
 # Shown as a row of links under your bio, in this order.
 links:
@@ -41,9 +64,9 @@ links:
 # Everything below appears on the CV page, not on the home page.
 # Publications are also listed there; they come from publications.yml.
 
-# The "Download PDF" button on the CV page. Save your CV as assets/cv.pdf,
+# The "Download PDF" button on the CV page. Put your CV in assets/ and set its path here,
 # or comment this line out to hide the button.
-cv_pdf: /assets/cv.pdf
+cv_pdf: /assets/CV_Yuheng_Chen.pdf
 
 # Newest first. `logo` and `detail` are optional.
 education:

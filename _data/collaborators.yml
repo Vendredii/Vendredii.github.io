@@ -1,0 +1,137 @@
+# Institutions on the collaboration map at the bottom of the CV page.
+# Delete every entry to hide the map.
+#
+# Generated on 2026-11-25 from the author affiliations that OpenAlex
+# (openalex.org) records for each paper in publications.yml; each person is
+# listed under the institution printed on the paper. Coordinates are
+# city-level. Institutions in the same city share one marker on the map.
+#
+#   institution  name shown on the map and in the list below it
+#   place        city and country
+#   lat, lon     coordinates in decimal degrees (right-click a spot in
+#                Google Maps or OpenStreetMap to copy them). An entry
+#                without them is listed but not drawn on the map.
+#   people       optional, shown when the marker is clicked
+#   home         true for your own institution: it gets a different colour
+#                and every other place is linked to it with a line
+
+- institution: "Utrecht University"
+  place: Utrecht, Netherlands
+  lat: 52.0908
+  lon: 5.1222
+  home: true
+  people: Kathryn E. Barry, Yann Hautier, George A. Kowalchuk, Jonas J. Lembrechts
+
+- institution: "Nanjing Forestry University"
+  place: Nanjing, China
+  lat: 32.0617
+  lon: 118.7778
+  people: Yao Li, Lingfeng Mao, Nan Yang, Xiuxiu Li, Yan Zhang, Bo Wang, Jiani Hua, Jiangbao Zhang, Sili Peng, Zhiwei Ge, Honghua Ruan, Yuran Dong, Oduro George, Min Zhang, Yong Yang, Lei Xie, Yanming Fang
+
+- institution: "Southwest Forestry University"
+  place: Kunming, China
+  lat: 25.0389
+  lon: 102.7183
+  people: Shuangfei Lu, Siyi Zhou, Xiaojie Yin, Chao Zhang, Rongliang Li, Jiahui Chen, Dongxu Ma, Yi Wang, Zhexiu Yu
+
+- institution: "Northwest Institute of Eco-Environment and Resources, Chinese Academy of Sciences"
+  place: Lanzhou, China
+  lat: 36.057
+  lon: 103.8399
+  people: Xiangyun Li, Zhaobin Song, Ya Hu, Jingjuan Qiao, Shaokun Wang, Ping Yue, Min Chen, Xiaoan Zuo
+
+- institution: "Hainan University"
+  place: Haikou, China
+  lat: 20.0342
+  lon: 110.3465
+  people: Xinyang Wang, Yanjun Du
+
+- institution: "Institute of Agricultural Resources and Regional Planning, Chinese Academy of Agricultural Sciences"
+  place: Beijing, China
+  lat: 39.9582
+  lon: 116.3275
+  people: Yuguang Ke, Chong Xu
+
+- institution: "Institute of Botany, Chinese Academy of Sciences"
+  place: Beijing, China
+  lat: 39.9075
+  lon: 116.3972
+  people: Guoke Chen, Keping Ma
+
+- institution: "Beijing Forestry University"
+  place: Beijing, China
+  lat: 39.9075
+  lon: 116.3972
+  people: Qiang Yu
+
+- institution: "Boston University"
+  place: Boston, United States
+  lat: 42.3584
+  lon: -71.0598
+  people: Richard B. Primack
+
+- institution: "Centre d'Écologie Fonctionnelle et Évolutive (CEFE)"
+  place: Montpellier, France
+  lat: 43.6109
+  lon: 3.8763
+  people: Xavier Morin
+
+- institution: "Chengdu University of Technology"
+  place: Chengdu, China
+  lat: 30.6667
+  lon: 104.0667
+  people: Jingji Li
+
+- institution: "East China Normal University"
+  place: Shanghai, China
+  lat: 31.2222
+  lon: 121.4581
+  people: Jian Zhang
+
+- institution: "Fudan University"
+  place: Shanghai, China
+  lat: 31.2222
+  lon: 121.4581
+  people: Dongfan Xu
+
+- institution: "Indiana University Bloomington"
+  place: Bloomington, United States
+  lat: 39.1653
+  lon: -86.5264
+  people: Yang Ou
+
+- institution: "Inner Mongolia University"
+  place: Hohhot, China
+  lat: 40.8106
+  lon: 111.6522
+  people: Gang Feng
+
+- institution: "Kunming Institute of Botany, Chinese Academy of Sciences"
+  place: Kunming, China
+  lat: 25.0389
+  lon: 102.7183
+  people: Dong Liu
+
+- institution: "Nanjing Institute of Environmental Sciences"
+  place: Nanjing, China
+  lat: 32.0617
+  lon: 118.7778
+  people: Hui Ding
+
+- institution: "South China Agricultural University"
+  place: Guangzhou, China
+  lat: 23.1167
+  lon: 113.25
+  people: Yongbin Wu
+
+- institution: "South China Botanical Garden, Chinese Academy of Sciences"
+  place: Guangzhou, China
+  lat: 23.1167
+  lon: 113.25
+  people: Zhuqiu Song
+
+- institution: "University of Antwerp"
+  place: Antwerp, Belgium
+  lat: 51.2205
+  lon: 4.4003
+  people: Jonas J. Lembrechts

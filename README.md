@@ -10,17 +10,25 @@ Pages: Home, News, Projects (one page per project), CV (with publications).
 | To change...                                | Edit                          |
 | ------------------------------------------- | ----------------------------- |
 | Home page: large photo, name, bio, links    | `_data/profile.yml`           |
-| News (the first entry is shown on Home)     | `_data/news.yml`              |
+| News (the newest one is shown on Home)      | one Markdown file each in `_news/` |
 | Projects                                    | one Markdown file each in `_projects/` |
 | CV: education, experience, awards           | `_data/profile.yml`           |
 | CV: publications                            | `_data/publications.yml`      |
-| CV: downloadable PDF                        | save it as `assets/cv.pdf`    |
+| CV: downloadable PDF                        | put it in `assets/` and set `cv_pdf` in `_data/profile.yml` |
+| CV: collaboration network map               | places and people in `_data/collaborators.yml`; links come from the authors in `_data/publications.yml` (script: `assets/js/collab-network.js`) |
 | Colours, fonts, page width                  | top of `assets/css/style.css` |
 | Header, navigation, footer                  | `_layouts/default.html`       |
 | Layout of one page                          | `index.html`, `news.html`, `projects.html`, `cv.html` |
 
 Each data file has comments explaining its fields. A section whose list is
 empty or commented out is hidden.
+
+### Adding news
+
+Copy the file in `_news/`, rename it (`YYYY-MM-DD-short-name.md`), and edit
+the lines at the top: `title`, `date`, `image` and `summary`. The text below
+them is the full article, written in Markdown. The newest item is shown on
+the home page; all of them are listed on the News page.
 
 ### Adding a project
 

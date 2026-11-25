@@ -2,6 +2,9 @@
 layout: default
 ---
 <section class="prose">
+    {%- comment -%} Projects without a date get the build time from Jekyll; skip those. {%- endcomment -%}
+    {% assign built = site.time | date: "%s" %}{% assign dated = page.date | date: "%s" %}
+    {% if dated != built %}<p class="card-date">{{ page.date | date: "%-d %B %Y" }}</p>{% endif %}
     <h1>{{ page.title }}</h1>
     {% if page.summary %}<p class="position">{{ page.summary }}</p>{% endif %}
     {% if page.image %}

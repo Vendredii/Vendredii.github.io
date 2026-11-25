@@ -3,23 +3,23 @@
 # this file is shown first.
 # Only `title` is required. Your own name is bolded automatically: write it
 # in the author list exactly as `name_in_papers` is set in profile.yml.
-# A trailing * (e.g. "Chen, Y.*") is allowed.
+# A trailing * (e.g. "Yuheng Chen*" for equal contribution) is allowed.
 #
 # They appear as a section of the CV page. To hide that section, delete
 # every entry below.
 
 - title: "Patterns of tree species richness in Southwest China"
   authors:
-    - Lu, S.
-    - Zhou, S.
-    - Yin, X.
-    - Zhang, C.
-    - Li, R.
-    - Chen, J.
-    - Ma, D.
-    - Wang, Y.
-    - Yu, Z.
-    - Chen, Y.
+    - Shuangfei Lu
+    - Siyi Zhou
+    - Xiaojie Yin
+    - Chao Zhang
+    - Rongliang Li
+    - Jiahui Chen
+    - Dongxu Ma
+    - Yi Wang
+    - Zhexiu Yu
+    - Yuheng Chen
   venue: "Environmental Monitoring and Assessment"
   year: 2021
   links:                  # optional, any names you like
@@ -27,9 +27,9 @@
 
 - title: "Combining the Effects of Global Warming, Land Use Change and Dispersal Limitations to Predict the Future Distributions of East Asian Cerris Oaks (Quercus Section Cerris, Fagaceae) in China"
   authors:
-    - Chen, Y.
-    - Li, Y.
-    - Mao, L.
+    - Yuheng Chen
+    - Yao Li
+    - Lingfeng Mao
   venue: "Forests"
   year: 2021
   links:                  # optional, any names you like
@@ -37,19 +37,19 @@
 
 - title: "Diversity patterns and drivers of soil bacterial and fungal communities along elevational gradients in the Southern Himalayas, China"
   authors:
-    - Yang, N.
-    - Li, X.
-    - Liu, D.
-    - Zhang, Y.
-    - Chen, Y.
-    - Wang, B.
-    - Hua, J.
-    - Zhang, J.
-    - Peng, S.
-    - Ge, Z.
-    - Li, J.
-    - Ruan, H.
-    - Mao, L.
+    - Nan Yang
+    - Xiuxiu Li
+    - Dong Liu
+    - Yan Zhang
+    - Yuheng Chen
+    - Bo Wang
+    - Jiani Hua
+    - Jiangbao Zhang
+    - Sili Peng
+    - Zhiwei Ge
+    - Jingji Li
+    - Honghua Ruan
+    - Lingfeng Mao
   venue: "Applied Soil Ecology"
   year: 2022
   links:                  # optional, any names you like
@@ -57,14 +57,14 @@
 
 - title: "Extinction risk of Chinese angiosperms varies between woody and herbaceous species"
   authors:
-    - Chen, Y.
-    - Wu, Y.
-    - Dong, Y.
-    - Yao, L.
-    - Ge, Z.
-    - George, O.
-    - Feng, G.
-    - Mao, L.
+    - Yuheng Chen
+    - Yongbin Wu
+    - Yuran Dong
+    - Yao Li
+    - Zhiwei Ge
+    - Oduro George
+    - Gang Feng
+    - Lingfeng Mao
   venue: "Diversity and Distributions"
   year: 2023
   links:                  # optional, any names you like
@@ -72,15 +72,15 @@
 
 - title: "Geographical patterns and determinants in plant reproductive phenology duration"
   authors:
-    - Wang, X.
-    - Morin, X.
-    - Zhang, J.
-    - Chen, G.
-    - Mao, L.
-    - Chen, Y.
-    - Song, Z.
-    - Du, Y.
-    - Ma, K.
+    - Xinyang Wang
+    - Xavier Morin
+    - Jian Zhang
+    - Guoke Chen
+    - Lingfeng Mao
+    - Yuheng Chen
+    - Zhuqiu Song
+    - Yanjun Du
+    - Keping Ma
   venue: "Frontiers in Plant Science"
   year: 2023
   links:                  # optional, any names you like
@@ -88,18 +88,18 @@
 
 - title: "Drought intensity and post-drought precipitation determine vegetation recovery in a desert steppe in Inner Mongolia, China"
   authors:
-    - Li, X.
-    - Song, Z.
-    - Hu, Y.
-    - Qiao, J.
-    - Chen, Y.
-    - Wang, S.
-    - Yue, P.
-    - Chen, M.
-    - Ke, Y.
-    - Xu, C.
-    - Yu, Q.
-    - Zuo, X.
+    - Xiangyun Li
+    - Zhaobin Song
+    - Ya Hu
+    - Jingjuan Qiao
+    - Yuheng Chen
+    - Shaokun Wang
+    - Ping Yue
+    - Min Chen
+    - Yuguang Ke
+    - Chong Xu
+    - Qiang Yu
+    - Xiaoan Zuo
   venue: "Science of the Total Environment"
   year: 2024
   links:                  # optional, any names you like
@@ -107,14 +107,14 @@
 
 - title: "More than just pandas: Urgent research needed on China's native plant biodiversity"
   authors:
-    - Chen, Y.
-    - Yao, L.
-    - Dong, Y.
-    - Zhang, M.
-    - Yang, Y.
-    - Primack, R.B.
-    - Barry, K.E.
-    - Mao, L.
+    - Yuheng Chen
+    - Yao Li
+    - Yuran Dong
+    - Min Zhang
+    - Yong Yang
+    - Richard B. Primack
+    - Kathryn E. Barry
+    - Lingfeng Mao
   venue: "Biological Conservation"
   year: 2024
   links:                  # optional, any names you like
@@ -122,10 +122,10 @@
 
 - title: "'Slow-Fast' Plant Trait Spectra Are Associated With Ecological Niches Across Global Climatic Gradients"
   authors:
-    - Chen, Y.
-    - Hautier, Y.
-    - Kowalchuk, G.A.
-    - Barry, K.E.
+    - Yuheng Chen
+    - Yann Hautier
+    - George A. Kowalchuk
+    - Kathryn E. Barry
   venue: "Global Ecology and Biogeography"
   year: 2025
   links:                  # optional, any names you like
@@ -133,13 +133,13 @@
 
 - title: "Identifying divergence time and paleoclimate change hotspots for better conservation under future climate change"
   authors:
-    - Chen, Y.
-    - Lembrechts, J.J.
-    - Hautier, Y.
-    - Xu, D.
-    - Yao, L.
-    - Dong, Y.
-    - Mao, L.
+    - Yuheng Chen
+    - Jonas J. Lembrechts
+    - Yann Hautier
+    - Dongfan Xu
+    - Yao Li
+    - Yuran Dong
+    - Lingfeng Mao
   venue: "Biological Conservation"
   year: 2025
   links:                  # optional, any names you like
@@ -147,11 +147,11 @@
 
 - title: "Parallel yet asymmetric community assembly patterns of phyllosphere fungi and bacteria in subtropical forests"
   authors:
-    - Xie, L.
-    - Ou, Y.
-    - Chen, Y.
-    - Ding, H.
-    - Fang, Y.
+    - Lei Xie
+    - Yang Ou
+    - Yuheng Chen
+    - Hui Ding
+    - Yanming Fang
   venue: "Forest Ecology and Management"
   year: 2025
   links:                  # optional, any names you like
